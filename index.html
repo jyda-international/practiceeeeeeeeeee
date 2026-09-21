@@ -450,26 +450,6 @@ textarea:focus{
   white-space:pre-line;
 }
 
-.adGrid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-bottom:16px;
-}
-
-.ad{
-  border:1px solid #303030;
-  background:#101010;
-  padding:17px;
-  border-radius:13px;
-}
-
-.ad strong{
-  color:var(--gold);
-  display:block;
-  margin-bottom:7px;
-}
-
 .writeBox{
   padding:25px;
   margin-bottom:18px;
@@ -514,6 +494,100 @@ textarea:focus{
   padding:15px 24px;
   border-radius:12px;
   font-weight:900;
+}
+
+/* AUDIO */
+
+.audioBox{
+  padding:22px;
+  margin-bottom:18px;
+  border:1px solid #5b4923;
+  background:linear-gradient(145deg,#17140d,#101010);
+  border-radius:18px;
+}
+
+.audioTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:14px;
+}
+
+.audioTitle{
+  font-weight:900;
+  color:var(--gold);
+  font-size:17px;
+}
+
+.audioSub{
+  color:#888;
+  font-size:12px;
+  margin-top:5px;
+}
+
+.audioIcon{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:#211b0d;
+  border:1px solid #5b4923;
+  font-size:20px;
+}
+
+.audioControls{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.audioButton{
+  border:1px solid #4a3c20;
+  background:#211b0d;
+  color:var(--gold);
+  padding:12px 15px;
+  border-radius:10px;
+  font-weight:900;
+}
+
+.audioButton:hover{
+  background:#2c230f;
+}
+
+.audioButton.stop{
+  color:#ff7777;
+  border-color:#613030;
+}
+
+.audioStatus{
+  color:#777;
+  font-size:12px;
+  margin-top:12px;
+}
+
+.questionAudio{
+  margin-bottom:15px;
+  padding:11px;
+  background:#0d0d0d;
+  border:1px solid #292929;
+  border-radius:11px;
+}
+
+.questionAudio button{
+  border:1px solid #493c21;
+  background:#18150e;
+  color:var(--gold);
+  padding:9px 12px;
+  border-radius:9px;
+  font-weight:800;
+}
+
+.questionAudio button.playing{
+  background:var(--gold);
+  color:#111;
 }
 
 /* RESULT */
@@ -585,8 +659,7 @@ textarea:focus{
 
 @media(max-width:760px){
   .tests,
-  .resultGrid,
-  .adGrid{
+  .resultGrid{
     grid-template-columns:1fr;
   }
 
@@ -611,6 +684,10 @@ textarea:focus{
   .bottomActions{
     flex-direction:column;
   }
+
+  .audioTop{
+    align-items:flex-start;
+  }
 }
 </style>
 </head>
@@ -619,210 +696,210 @@ textarea:focus{
 
 <div id="landingPage" class="app">
 
-  <header>
-    <div class="brand">
-      DEUTSCH MIT JITU
-      <small>A DAHIYA GLOBAL COMPANY</small>
-    </div>
-    <div class="badge">A1 • MODEL TEST ARENA</div>
-  </header>
+<header>
+<div class="brand">
+DEUTSCH MIT JITU
+<small>A DAHIYA GLOBAL COMPANY</small>
+</div>
+<div class="badge">A1 • MODEL TEST ARENA</div>
+</header>
 
-  <section class="card hero">
+<section class="card hero">
 
-    <h1>
-      German A1<br>
-      <span class="gold">Model Test Arena</span>
-    </h1>
+<h1>
+German A1<br>
+<span class="gold">Model Test Arena</span>
+</h1>
 
-    <p>
-      Structured A1 practice for Hören, Lesen and Schreiben.
-      Choose a model test and complete the examination directly on this website.
-    </p>
+<p>
+Structured A1 practice for Hören, Lesen and Schreiben.
+Choose a model test and complete the examination directly on this website.
+</p>
 
-    <div class="nameBox">
+<div class="nameBox">
 
-      <input
-        id="studentName"
-        type="text"
-        autocomplete="name"
-        placeholder="Enter student name"
-      >
+<input
+id="studentName"
+type="text"
+autocomplete="name"
+placeholder="Enter student name"
+>
 
-      <button class="primary" id="continueBtn">
-        CONTINUE →
-      </button>
+<button class="primary" id="continueBtn">
+CONTINUE →
+</button>
 
-    </div>
+</div>
 
-    <div class="notice">
-      <strong>Audio notice:</strong>
-      The supplied source book uses separate audio recordings for Hören.
-      This website does not generate or fake the audio. Play the corresponding
-      recording externally/offline while answering the Hören section.
-    </div>
+<div class="notice">
+<strong>Hören Audio:</strong>
+Every Hören question has a playable German audio fallback.
+If an official MP3 is available, it will be used automatically.
+Otherwise the browser generates German speech directly.
+</div>
 
-    <div class="footerBrand">
-      Practice platform by
-      <a href="https://deutschmitjitu.in/" target="_blank">
-        Deutsch mit Jitu
-      </a>
-      • Founded by Jatin Dahiya • Dahiya Global
-    </div>
+<div class="footerBrand">
+Practice platform by
+<a href="https://deutschmitjitu.in/" target="_blank">
+Deutsch mit Jitu
+</a>
+• Founded by Jatin Dahiya • Dahiya Global
+</div>
 
-  </section>
-
+</section>
 </div>
 
 
 <div id="pickerPage" class="app hidden">
 
-  <header>
-    <div class="brand">
-      DEUTSCH MIT JITU
-      <small>A DAHIYA GLOBAL COMPANY</small>
-    </div>
-    <div class="badge">SELECT MODEL TEST</div>
-  </header>
+<header>
+<div class="brand">
+DEUTSCH MIT JITU
+<small>A DAHIYA GLOBAL COMPANY</small>
+</div>
+<div class="badge">SELECT MODEL TEST</div>
+</header>
 
-  <section class="card pickerTop">
-    <h2>Hallo, <span id="pickerName" class="gold"></span> 👋</h2>
-    <p>
-      Select a model test. Your answers are saved while you move between
-      sections.
-    </p>
-  </section>
+<section class="card pickerTop">
+<h2>Hallo, <span id="pickerName" class="gold"></span> 👋</h2>
+<p>
+Select a model test. Your answers are saved while you move between
+sections.
+</p>
+</section>
 
-  <div id="testCards" class="tests"></div>
+<div id="testCards" class="tests"></div>
 
-  <div class="footerBrand">
-    <a href="https://deutschmitjitu.in/" target="_blank">
-      deutschmitjitu.in
-    </a>
-    • Dahiya Global
-  </div>
+<div class="footerBrand">
+<a href="https://deutschmitjitu.in/" target="_blank">
+deutschmitjitu.in
+</a>
+• Dahiya Global
+</div>
 
 </div>
 
 
 <div id="examPage" class="hidden">
 
-  <div class="examHeader">
-    <div class="examHeaderInner">
+<div class="examHeader">
+<div class="examHeaderInner">
 
-      <div class="examTitle">
-        <strong id="examName">A1 Model Test</strong>
-        <span id="examStudent"></span>
-      </div>
+<div class="examTitle">
+<strong id="examName">A1 Model Test</strong>
+<span id="examStudent"></span>
+</div>
 
-      <div id="timer" class="timer">
-        70:00
-      </div>
+<div id="timer" class="timer">
+70:00
+</div>
 
-    </div>
-  </div>
+</div>
+</div>
 
-  <main class="app">
+<main class="app">
 
-    <div class="progressWrap">
-      <div class="progressInfo">
-        <span id="progressText">0 / 45 answered</span>
-        <span id="sectionText">Hören</span>
-      </div>
+<div class="progressWrap">
+<div class="progressInfo">
+<span id="progressText">0 / 45 answered</span>
+<span id="sectionText">Hören</span>
+</div>
 
-      <div class="progress">
-        <div id="progressBar" class="progressBar"></div>
-      </div>
-    </div>
+<div class="progress">
+<div id="progressBar" class="progressBar"></div>
+</div>
+</div>
 
-    <div id="tabs" class="tabs"></div>
+<div id="tabs" class="tabs"></div>
 
-    <div id="sectionContent"></div>
+<div id="sectionContent"></div>
 
-    <div class="bottomActions">
+<div class="bottomActions">
 
-      <button class="secondary" id="backToPicker">
-        ← MODEL TESTS
-      </button>
+<button class="secondary" id="backToPicker">
+← MODEL TESTS
+</button>
 
-      <button class="submit" id="submitBtn">
-        SUBMIT TEST →
-      </button>
+<button class="submit" id="submitBtn">
+SUBMIT TEST →
+</button>
 
-    </div>
+</div>
 
-  </main>
-
+</main>
 </div>
 
 
 <div id="resultPage" class="app hidden">
 
-  <header>
-    <div class="brand">
-      DEUTSCH MIT JITU
-      <small>A DAHIYA GLOBAL COMPANY</small>
-    </div>
-    <div class="badge">RESULT</div>
-  </header>
+<header>
+<div class="brand">
+DEUTSCH MIT JITU
+<small>A DAHIYA GLOBAL COMPANY</small>
+</div>
+<div class="badge">RESULT</div>
+</header>
 
-  <section class="card resultHero">
+<section class="card resultHero">
 
-    <p style="color:#999">A1 German Model Test</p>
+<p style="color:#999">A1 German Model Test</p>
 
-    <h1 id="resultTitle" style="margin-top:8px">
-      Result
-    </h1>
+<h1 id="resultTitle" style="margin-top:8px">
+Result
+</h1>
 
-    <div class="scoreCircle">
-      <div>
-        <strong id="totalScore">0</strong>
-        <span>/ 45</span>
-      </div>
-    </div>
+<div class="scoreCircle">
+<div>
+<strong id="totalScore">0</strong>
+<span>/ 45</span>
+</div>
+</div>
 
-    <h2 id="resultMessage"></h2>
+<h2 id="resultMessage"></h2>
 
-    <div class="resultGrid">
+<div class="resultGrid">
 
-      <div class="card resultStat">
-        <strong id="listenScore">0</strong>
-        <span>HÖREN</span>
-      </div>
+<div class="card resultStat">
+<strong id="listenScore">0</strong>
+<span>HÖREN</span>
+</div>
 
-      <div class="card resultStat">
-        <strong id="readScore">0</strong>
-        <span>LESEN</span>
-      </div>
+<div class="card resultStat">
+<strong id="readScore">0</strong>
+<span>LESEN</span>
+</div>
 
-      <div class="card resultStat">
-        <strong id="writeScore">0</strong>
-        <span>SCHREIBEN</span>
-      </div>
+<div class="card resultStat">
+<strong id="writeScore">0</strong>
+<span>SCHREIBEN</span>
+</div>
 
-    </div>
+</div>
 
-    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
 
-      <button class="primary" style="width:auto;padding:14px 25px" id="printBtn">
-        PRINT / SAVE PDF
-      </button>
+<button class="primary"
+style="width:auto;padding:14px 25px"
+id="printBtn">
+PRINT / SAVE PDF
+</button>
 
-      <button class="secondary" id="newTestBtn">
-        NEW TEST
-      </button>
+<button class="secondary" id="newTestBtn">
+NEW TEST
+</button>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
-  <section id="reviewBox" class="card review"></section>
+<section id="reviewBox" class="card review"></section>
 
-  <div class="footerBrand">
-    <a href="https://deutschmitjitu.in/" target="_blank">
-      deutschmitjitu.in
-    </a>
-    • Dahiya Global
-  </div>
+<div class="footerBrand">
+<a href="https://deutschmitjitu.in/" target="_blank">
+deutschmitjitu.in
+</a>
+• Dahiya Global
+</div>
 
 </div>
 
@@ -830,179 +907,187 @@ textarea:focus{
 <script>
 "use strict";
 
+
 /* =========================================================
-   DEUTSCH MIT JITU — A1 MODEL TEST ARENA
-   CLEAN SINGLE-PAGE APPLICATION
-   ========================================================= */
-
-
-/* -----------------------------
    GLOBAL STATE
------------------------------ */
+========================================================= */
 
 const state = {
-  studentName: "",
-  testId: null,
-  currentSection: "hoeren",
-  answers: {},
-  writing: {},
-  submitted: false,
-  timerSeconds: 70 * 60
+studentName:"",
+testId:null,
+currentSection:"hoeren",
+answers:{},
+writing:{},
+submitted:false,
+timerSeconds:70*60
 };
 
 
-/* -----------------------------
-   SOURCE DATA
-   Based on supplied
-   Prüfungstraining Start Deutsch 1
------------------------------ */
+/* =========================================================
+   OPTIONAL REAL AUDIO
+   If files exist, they are used.
+   If not, browser German TTS is used.
+========================================================= */
+
+const AUDIO_FILES = {
+
+1:"audio/modelltest1-hoeren.mp3",
+2:"audio/modelltest2-hoeren.mp3",
+3:"audio/modelltest3-hoeren.mp3",
+4:"audio/modelltest4-hoeren.mp3"
+
+};
+
+
+/* =========================================================
+   TEST DATA
+========================================================= */
 
 const TESTS = {
 
-  1: {
-    title: "Modelltest 1",
-    subtitle: "Schritt-für-Schritt A1 Training",
-    sections: ["hoeren","lesen","schreiben"],
+1:{
+title:"Modelltest 1",
+subtitle:"Schritt-für-Schritt A1 Training",
+sections:["hoeren","lesen","schreiben"],
 
-    hoeren: [
+hoeren:[
 
-      {
-        q: "Was kostet der Mantel?",
-        options:["50 €","65 €","60,50 €"],
-        answer:2
-      },
+{
+q:"Was kostet der Mantel?",
+options:["50 €","65 €","60,50 €"],
+answer:2
+},
 
-      {
-        q: "Wie muss die Frau gehen?",
-        options:[
-          "Geradeaus und links.",
-          "Geradeaus und rechts.",
-          "Immer geradeaus."
-        ],
-        answer:0
-      },
+{
+q:"Wie muss die Frau gehen?",
+options:[
+"Geradeaus und links.",
+"Geradeaus und rechts.",
+"Immer geradeaus."
+],
+answer:0
+},
 
-      {
-        q: "Wann fährt der Zug nach München?",
-        options:[
-          "Um 16 Uhr 30.",
-          "Um 17 Uhr 30.",
-          "Um 19 Uhr."
-        ],
-        answer:0
-      },
+{
+q:"Wann fährt der Zug nach München?",
+options:[
+"Um 16 Uhr 30.",
+"Um 17 Uhr 30.",
+"Um 19 Uhr."
+],
+answer:0
+},
 
-      {
-        q: "Wann gehen Anja und Yvonne ins Kino?",
-        options:[
-          "Am Freitag.",
-          "Am Samstag.",
-          "Am Sonntag."
-        ],
-        answer:2
-      },
+{
+q:"Wann gehen Anja und Yvonne ins Kino?",
+options:[
+"Am Freitag.",
+"Am Samstag.",
+"Am Sonntag."
+],
+answer:2
+},
 
-      {
-        q: "Was bestellt die Frau im Restaurant?",
-        options:[
-          "Fleisch.",
-          "Suppe.",
-          "Gemüse."
-        ],
-        answer:1
-      },
+{
+q:"Was bestellt die Frau im Restaurant?",
+options:[
+"Fleisch.",
+"Suppe.",
+"Gemüse."
+],
+answer:1
+},
 
-      {
-        q: "Wohin fahren die Freunde zusammen in den Urlaub?",
-        options:[
-          "Ans Meer.",
-          "Nach Berlin.",
-          "Nach München."
-        ],
-        answer:2
-      },
+{
+q:"Wohin fahren die Freunde zusammen in den Urlaub?",
+options:[
+"Ans Meer.",
+"Nach Berlin.",
+"Nach München."
+],
+answer:2
+},
 
-      {
-        q: "Familie Schmidt soll schnell in die Halle A kommen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
+{
+q:"Familie Schmidt soll schnell in die Halle A kommen.",
+options:["Richtig","Falsch"],
+answer:0
+},
 
-      {
-        q: "Der Zug nach Frankfurt fährt heute um 13 Uhr 20.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
+{
+q:"Der Zug nach Frankfurt fährt heute um 13 Uhr 20.",
+options:["Richtig","Falsch"],
+answer:1
+},
 
-      {
-        q: "Das Kaufhaus ist nur noch kurze Zeit geöffnet.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
+{
+q:"Das Kaufhaus ist nur noch kurze Zeit geöffnet.",
+options:["Richtig","Falsch"],
+answer:0
+},
 
-      {
-        q: "Der kleine Junge sucht seine Eltern.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
+{
+q:"Der kleine Junge sucht seine Eltern.",
+options:["Richtig","Falsch"],
+answer:0
+},
 
-      {
-        q: "Was soll die Frau tun?",
-        options:[
-          "Sie soll Essen kaufen.",
-          "Sie soll in die Firma kommen.",
-          "Sie soll mit dem Mann telefonieren."
-        ],
-        answer:2
-      },
+{
+q:"Was soll die Frau tun?",
+options:[
+"Sie soll Essen kaufen.",
+"Sie soll in die Firma kommen.",
+"Sie soll mit dem Mann telefonieren."
+],
+answer:2
+},
 
-      {
-        q: "Wie ist die Telefonnummer?",
-        options:[
-          "069483215",
-          "069482315",
-          "069843214"
-        ],
-        answer:0
-      },
+{
+q:"Wie ist die Telefonnummer?",
+options:[
+"069483215",
+"069482315",
+"069843214"
+],
+answer:0
+},
 
-      {
-        q: "Wann kann die Frau einen Termin haben?",
-        options:[
-          "Am Mittwoch.",
-          "Am Donnerstag.",
-          "Am Freitag."
-        ],
-        answer:2
-      },
+{
+q:"Wann kann die Frau einen Termin haben?",
+options:[
+"Am Mittwoch.",
+"Am Donnerstag.",
+"Am Freitag."
+],
+answer:2
+},
 
-      {
-        q: "Wie lange will der Mann noch warten?",
-        options:[
-          "Eine halbe Stunde.",
-          "Eine Viertelstunde.",
-          "Bis Viertel nach acht."
-        ],
-        answer:1
-      },
+{
+q:"Wie lange will der Mann noch warten?",
+options:[
+"Eine halbe Stunde.",
+"Eine Viertelstunde.",
+"Bis Viertel nach acht."
+],
+answer:1
+},
 
-      {
-        q: "Wo will Pauline ihre Freundin treffen?",
-        options:[
-          "Im Kino.",
-          "In ihrer Wohnung.",
-          "Beim Arzt."
-        ],
-        answer:1
-      }
+{
+q:"Wo will Pauline ihre Freundin treffen?",
+options:[
+"Im Kino.",
+"In ihrer Wohnung.",
+"Beim Arzt."
+],
+answer:1
+}
 
-    ],
+],
 
-    lesen: [
+lesen:[
 
-      {
-        text:
-`Hallo Erik,
+{
+text:`Hallo Erik,
 
 vielen Dank für deine Einladung zum Geburtstag. Leider kann ich am Samstagabend nicht kommen. Ich muss am Wochenende arbeiten. Ich muss zu einem Kongress nach Köln und bin erst Sonntagmittag zurück.
 
@@ -1010,75 +1095,70 @@ Vielleicht können wir uns nächste Woche treffen. Ich habe auch ein schönes Ge
 
 Feiert schön und bis nächste Woche
 Peter`,
-        q:"Erik hat nächste Woche Geburtstag.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
+q:"Erik hat nächste Woche Geburtstag.",
+options:["Richtig","Falsch"],
+answer:1
+},
 
-      {
-        q:"Peter hat am Samstag keine Zeit.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
+{
+q:"Peter hat am Samstag keine Zeit.",
+options:["Richtig","Falsch"],
+answer:0
+},
 
-      {
-        text:
-`An der Haustür:
+{
+text:`An der Haustür:
 
 Reparaturarbeiten an der Heizung!
 
 Die Firma Drosch muss am Freitag, dem 12. Oktober, in alle Wohnungen.
 
 Bitte seien Sie zu Hause oder geben Sie Ihren Wohnungsschlüssel bei Frau Dorn ab.`,
-        q:"Sie müssen am 12. Oktober in Ihrer Wohnung sein.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
+q:"Sie müssen am 12. Oktober in Ihrer Wohnung sein.",
+options:["Richtig","Falsch"],
+answer:1
+},
 
-      {
-        text:
-`Im Restaurant:
+{
+text:`Im Restaurant:
 
 Essen und Trinken im Garten
 wochentags bis 22 Uhr,
 freitags und samstags bis 23 Uhr.
 Das Restaurant schließt um 24 Uhr.`,
-        q:"Am Mittwochabend können Sie bis 23 Uhr im Garten sitzen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
+q:"Am Mittwochabend können Sie bis 23 Uhr im Garten sitzen.",
+options:["Richtig","Falsch"],
+answer:1
+},
 
-      {
-        text:
-`Auf der Straße:
+{
+text:`Auf der Straße:
 
 Parken verboten.
 Sie dürfen hier nicht parken.`,
-        q:"Sie dürfen hier parken.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
+q:"Sie dürfen hier parken.",
+options:["Richtig","Falsch"],
+answer:1
+},
 
-      {
-        text:
-`Fahrrad, rot, 2 Jahre alt,
+{
+text:`Fahrrad, rot, 2 Jahre alt,
 3 Gänge, für nur 60 EURO zu verkaufen.
 
 www.günstiger-online.de
 
 Verkaufe: billigen Motorroller, 200 EURO,
 außerdem Fahrradtaschen.`,
-        q:"Sie suchen ein billiges Fahrrad. Welche Anzeige passt?",
-        options:[
-          "www.günstiger-online.de",
-          "www.kaufboerse.de"
-        ],
-        answer:0
-      },
+q:"Sie suchen ein billiges Fahrrad. Welche Anzeige passt?",
+options:[
+"www.günstiger-online.de",
+"www.kaufboerse.de"
+],
+answer:0
+},
 
-      {
-        text:
-`Urlaub in Deutschland:
+{
+text:`Urlaub in Deutschland:
 Attraktive Angebote für die ganze Familie.
 Ferien auf dem Bauernhof.
 
@@ -1087,150 +1167,140 @@ im Sommer und im Herbst.
 Alle Stufen.
 
 www.sprachzentrum-berlin.de`,
-        q:"Sie wollen in Deutschland Urlaub machen und auch weiter Deutsch lernen.",
-        options:[
-          "www.urlaub-zuhause.de",
-          "www.sprachzentrum-berlin.de"
-        ],
-        answer:1
-      },
+q:"Sie wollen in Deutschland Urlaub machen und auch weiter Deutsch lernen.",
+options:[
+"www.urlaub-zuhause.de",
+"www.sprachzentrum-berlin.de"
+],
+answer:1
+},
 
-      {
-        text:
-`Rheinische Party auf dem Wasser.
+{
+text:`Rheinische Party auf dem Wasser.
 Abendbuffet, Brunchbuffet,
 Besuch der Stadt Rüdesheim,
 Abendprogramm.
 
 www.hessen-tourismus.de`,
-        q:"Sie möchten auf dem Rhein eine Schiffsreise machen und Rüdesheim besuchen.",
-        options:[
-          "www.bahn.de",
-          "www.hessen-tourismus.de"
-        ],
-        answer:1
-      },
+q:"Sie möchten auf dem Rhein eine Schiffsreise machen und Rüdesheim besuchen.",
+options:[
+"www.bahn.de",
+"www.hessen-tourismus.de"
+],
+answer:1
+},
 
-      {
-        text:
-`Gesucht:
+{
+text:`Gesucht:
 Mitarbeiter in der Großküche eines Restaurants,
 Bezahlung nach Stunden,
 6 EURO pro Stunde.
 
 Tel.: 06191/24 30`,
-        q:"Ihr Freund kann nur am Wochenende arbeiten und hat keinen Führerschein.",
-        options:[
-          "Tel.: 06191/13 55",
-          "Tel.: 06191/24 30"
-        ],
-        answer:1
-      },
+q:"Ihr Freund kann nur am Wochenende arbeiten und hat keinen Führerschein.",
+options:[
+"Tel.: 06191/13 55",
+"Tel.: 06191/24 30"
+],
+answer:1
+},
 
-      {
-        text:
-`ASIA-LAND
+{
+text:`ASIA-LAND
 Chinesische und indonesische Spezialitäten.
 Öffnungszeiten von 11.30–22 Uhr.
 Montag – Ruhetag.`,
-        q:"Sie möchten mit Freunden am Sonntagmittag Chinesisch essen gehen.",
-        options:[
-          "Ins Restaurant Asia-Land",
-          "Ins Restaurant Zum Lotusgarten"
-        ],
-        answer:0
-      },
+q:"Sie möchten mit Freunden am Sonntagmittag Chinesisch essen gehen.",
+options:[
+"Ins Restaurant Asia-Land",
+"Ins Restaurant Zum Lotusgarten"
+],
+answer:0
+},
 
-      {
-        text:
-`An einer Bäckerei:
+{
+text:`An einer Bäckerei:
 
 WIR ZIEHEN UM!
 
 Die Bäckerei KOHLHAMMER
 finden Sie ab nächster Woche
 in der Taunusstraße 12.`,
-        q:"Schon heute können Sie in der Taunusstraße Brötchen kaufen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
+q:"Schon heute können Sie in der Taunusstraße Brötchen kaufen.",
+options:["Richtig","Falsch"],
+answer:1
+},
 
-      {
-        text:
-`Im Fenster eines Kaufhauses:
+{
+text:`Im Fenster eines Kaufhauses:
 
 SONDERAKTION 50 %
 weniger zahlen!
 
 Ab morgen kostet alles nur die Hälfte.`,
-        q:"Ab morgen können Sie billiger einkaufen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
+q:"Ab morgen können Sie billiger einkaufen.",
+options:["Richtig","Falsch"],
+answer:0
+},
 
-      {
-        text:
-`An einer Haltestelle:
+{
+text:`An einer Haltestelle:
 
 Die Straßenbahnen fahren heute
 nur zur Kaiserstraße.
 
 Zur Weiterfahrt zum Hauptbahnhof
 nehmen Sie bitte den Bus Linie 103.`,
-        q:"Heute fahren die Straßenbahnen und Busse nur bis zum Hauptbahnhof.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
+q:"Heute fahren die Straßenbahnen und Busse nur bis zum Hauptbahnhof.",
+options:["Richtig","Falsch"],
+answer:1
+},
 
-      {
-        text:
-`An einer Bäckerei:
+{
+text:`An einer Bäckerei:
 
 Wir ziehen um!
 Sie finden uns ab nächster Woche
 in der Taunusstraße 12.`,
-        q:"Die Bäckerei ist schon heute in der Taunusstraße.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
+q:"Die Bäckerei ist schon heute in der Taunusstraße.",
+options:["Richtig","Falsch"],
+answer:1
+},
 
-      {
-        text:
-`An der Straße:
+{
+text:`An der Straße:
 
 Parken verboten.
 
 Sie dürfen hier nicht parken.`,
-        q:"Hier darf man nicht parken.",
-        options:["Richtig","Falsch"],
-        answer:0
-      }
+q:"Hier darf man nicht parken.",
+options:["Richtig","Falsch"],
+answer:0
+}
 
-    ],
+],
 
-    schreiben: [
+schreiben:[
 
-      {
-        type:"form",
-        title:"Schreiben Teil 1",
-        prompt:
-`Ihr Freund, Juan Rodriguez, geboren am 12.10.1985, möchte einen Deutschkurs an der Volkshochschule machen. Er ist kein Anfänger, er hat schon die A1-Prüfung gemacht. Er ist Taxifahrer von Beruf und arbeitet abends. Er möchte vormittags einen Kurs besuchen. Juan wohnt in München, in der Danklstraße 15. Die Postleitzahl ist 81371.
+{
+type:"form",
+title:"Schreiben Teil 1",
+prompt:`Ihr Freund, Juan Rodriguez, geboren am 12.10.1985, möchte einen Deutschkurs an der Volkshochschule machen. Er ist kein Anfänger, er hat schon die A1-Prüfung gemacht. Er ist Taxifahrer von Beruf und arbeitet abends. Er möchte vormittags einen Kurs besuchen. Juan wohnt in München, in der Danklstraße 15. Die Postleitzahl ist 81371.
 
 Füllen Sie die fünf fehlenden Informationen aus.`,
-        fields:[
-          {id:"s1",label:"Postleitzahl, Wohnort",answer:"81371 München"},
-          {id:"s2",label:"Straße, Hausnummer",answer:"Danklstraße 15"},
-          {id:"s3",label:"Beruf",answer:"Taxifahrer"},
-          {id:"s4",label:"Kurs",answer:"Deutsch Fortgeschrittene A2"},
-          {id:"s5",label:"Termin",answer:"montags–freitags 9–12 Uhr"}
-        ]
-      },
+fields:[
+{id:"s1",label:"Postleitzahl, Wohnort",answer:"81371 München"},
+{id:"s2",label:"Straße, Hausnummer",answer:"Danklstraße 15"},
+{id:"s3",label:"Beruf",answer:"Taxifahrer"},
+{id:"s4",label:"Kurs",answer:"Deutsch Fortgeschrittene A2"},
+{id:"s5",label:"Termin",answer:"montags–freitags 9–12 Uhr"}
+]
+},
 
-      {
-        type:"text",
-        title:"Schreiben Teil 2",
-        prompt:
-`Sie möchten mit Ihrem Freund Tom am Sonntag einen Ausflug mit dem Fahrrad machen.
+{
+type:"text",
+title:"Schreiben Teil 2",
+prompt:`Sie möchten mit Ihrem Freund Tom am Sonntag einen Ausflug mit dem Fahrrad machen.
 
 Schreiben Sie Tom eine E-Mail.
 
@@ -1239,1867 +1309,2082 @@ Schreiben Sie Tom eine E-Mail.
 • Wo wollen Sie sich treffen?
 
 Schreiben Sie circa 30 Wörter. Schreiben Sie auch eine Anrede und einen Gruß.`,
-        id:"s6"
-      }
-
-    ]
-  },
-
-
-  2: {
-    title:"Modelltest 2",
-    subtitle:"A1 Prüfungstraining",
-    sections:["hoeren","lesen","schreiben"],
-
-    hoeren:[
-
-      {
-        q:"Wie spät ist es jetzt?",
-        options:["Halb 3.","Halb 4.","Zehn nach halb 4."],
-        answer:1
-      },
-
-      {
-        q:"Welches Zimmer bekommt Herr Pauli?",
-        options:["Zimmer 121.","Zimmer 212.","Zimmer 211."],
-        answer:2
-      },
-
-      {
-        q:"Was soll Anja mitbringen?",
-        options:["Getränke.","Essen.","Musik."],
-        answer:2
-      },
-
-      {
-        q:"Mit wem telefoniert Tom?",
-        options:["Mit seiner Mutter.","Mit seiner Tante.","Mit seiner Freundin."],
-        answer:2
-      },
-
-      {
-        q:"Wo ist die Frau?",
-        options:["Am Schwimmbad.","Am Bahnhof.","An der Sprachschule."],
-        answer:1
-      },
-
-      {
-        q:"Heute fahren keine U-Bahnen zum Südbahnhof.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Kaffee ist heute billig.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Der Bus kommt um 17.30 Uhr in Friedberg an.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Im Zugrestaurant gibt es heute keinen Kuchen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Wann hat das Reisebüro wieder geöffnet?",
-        options:["Am 15. April.","Am 30. April.","Am 2. Mai."],
-        answer:2
-      },
-
-      {
-        q:"Wo treffen sich die Freundinnen?",
-        options:["Vor dem Kino.","In der Disco.","Vor der Schule."],
-        answer:2
-      },
-
-      {
-        q:"Wie ist die Nummer der Volkshochschule?",
-        options:["0692126564","069 21 2 56 46","0692125664"],
-        answer:1
-      },
-
-      {
-        q:"Wie kommt Ewa zur Schule?",
-        options:["Mit dem Bus.","Mit dem Fahrrad.","Zu Fuß."],
-        answer:1
-      },
-
-      {
-        q:"Was soll Frau Krüger mitbringen?",
-        options:["Ein Formular.","Ihren Ausweis.","Einen Computer."],
-        answer:1
-      },
-
-      {
-        q:"Was soll Frau Krüger mitbringen?",
-        options:["Ein Formular.","Ihren Ausweis.","Einen Computer."],
-        answer:1
-      }
-
-    ],
-
-    lesen:[
-
-      {
-        text:
-`Hallo Kristina,
-
-vielen Dank für die Einladung zu deiner Party. Ich komme gern. Du schreibst, ich kann bei dir übernachten. Vielen Dank! Dann muss ich kein Hotel suchen.
-
-Ich habe noch eine Frage: Kann ich auch meine Freundin Andrea mitbringen? Sie kommt aus Spanien und ist zurzeit bei mir auf Besuch.
-
-Liebe Grüße
-Maria`,
-        q:"Maria übernachtet im Hotel.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Maria hat Besuch aus Spanien.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Lieber Herr Schmidt,
-
-vielen Dank für Ihre Mail. Leider kann ich Sie am Montag, dem 18. März um 15 Uhr nicht besuchen. Ich habe an diesem Tag noch andere Kundentermine.
-
-Wir können uns aber nach 19 Uhr treffen oder gerne auch am 19. März. An diesem Tag habe ich den ganzen Tag frei.
-
-Viele Grüße
-Georg Bauer`,
-        q:"Herr Bauer möchte Herrn Schmidt besuchen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Herr Bauer hat am 18. März abends Zeit.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Herr Bauer hat am 19. März keine Termine.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Sie möchten am Sonntagmittag essen gehen und draußen sitzen.",
-        options:["www.zum-schwan.de","www.zur-mühle.de"],
-        answer:0
-      },
-
-      {
-        q:"Sie möchten ein neues Fahrrad kaufen.",
-        options:["www.fahrrad-bauer.com","www.bike-und-co.de"],
-        answer:1
-      },
-
-      {
-        q:"Sie möchten am Wochenende tanzen gehen.",
-        options:["www.weber-tanz.de","www.velvet.de"],
-        answer:1
-      },
-
-      {
-        q:"Sie möchten mit drei Freunden Hessen kennenlernen.",
-        options:["www.deutsche-bahn.de","www.ticketshop.com"],
-        answer:0
-      },
-
-      {
-        q:"Es ist Samstag. Ihr Computer ist kaputt. Sie suchen schnell Hilfe.",
-        options:["www.compuservice.de","www.techniker.de"],
-        answer:0
-      },
-
-      {
-        text:
-`Bäckerei Krause
-
-Wir sind umgezogen.
-Sie finden uns jetzt in
-der Bahnhofstraße 10.`,
-        q:"In der Bahnhofstraße 10 kann man Brot kaufen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Volksbank
-
-Öffnungszeiten:
-Mo–Fr 9–18 Uhr
-Sa 9–12 Uhr`,
-        q:"Die Bank ist am Samstag bis 18 Uhr geöffnet.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        text:
-`Wegen Bauarbeiten ist die Haltestelle verlegt.
-200 Meter rechts an der Ecke Münchner Straße / Kaiserstraße.`,
-        q:"Die Haltestelle ist wegen Bauarbeiten verlegt.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Restaurant Eiche
-
-Wegen Urlaub bis zum 1. September geschlossen.`,
-        q:"Das Restaurant ist bis zum 1. September geschlossen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Frühstück gibt es täglich von 7–10 Uhr,
-sonntags von 8–10 Uhr
-im Frühstückssaal im ersten Stock.`,
-        q:"Sonntags gibt es Frühstück ab 8 Uhr.",
-        options:["Richtig","Falsch"],
-        answer:0
-      }
-
-    ],
-
-    schreiben:[
-
-      {
-        type:"form",
-        title:"Schreiben Teil 1",
-        prompt:
-`Ihr Freund Oleg möchte einen Kurs besuchen. Ergänzen Sie die fünf fehlenden Informationen im Formular.`,
-        fields:[
-          {id:"s1",label:"Vorname",answer:"Oleg"},
-          {id:"s2",label:"Geschlecht",answer:"männlich"},
-          {id:"s3",label:"Hobby",answer:"Fußball spielen"},
-          {id:"s4",label:"Preis",answer:"5 €"},
-          {id:"s5",label:"Wie oft?",answer:"vierteljährlich"}
-        ]
-      },
-
-      {
-        type:"text",
-        title:"Schreiben Teil 2",
-        prompt:
-`Schreiben Sie eine kurze Mitteilung.
-
-Schreiben Sie zu jedem Punkt ein bis zwei Sätze.`,
-        id:"s6"
-      }
-
-    ]
-  },
-
-
-  3:{
-    title:"Modelltest 3",
-    subtitle:"A1 Prüfungstraining",
-    sections:["hoeren","lesen","schreiben"],
-
-    hoeren:[
-
-      {
-        q:"Was bestellt die Frau?",
-        options:["Fisch","Suppe","Salat"],
-        answer:1
-      },
-
-      {
-        q:"In welche Klasse geht Anja?",
-        options:["erste","zweite","siebte"],
-        answer:1
-      },
-
-      {
-        q:"Was macht Ewa heute Abend?",
-        options:["Ins Café gehen.","Einen Film sehen.","Lernen."],
-        answer:2
-      },
-
-      {
-        q:"Was kosten die Tomaten?",
-        options:["1 € 15","1 € 50","1 € 65"],
-        answer:1
-      },
-
-      {
-        q:"Wie lange dauert der Deutschkurs?",
-        options:["5 Tage","20 Tage","1 Monat"],
-        answer:1
-      },
-
-      {
-        q:"Wann ist die Party?",
-        options:["Am Samstag.","Am Sonntag.","Am Freitag."],
-        answer:0
-      },
-
-      {
-        q:"Die Fahrgäste nach Bonn müssen umsteigen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Frau Köhler soll in die Halle A kommen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Sie können noch 15 Minuten einkaufen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Der Zug nach Heidelberg fährt von Gleis 19.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Wann kann Herr Lohmann einen Termin haben?",
-        options:[
-          "Am Dienstag um 14 Uhr.",
-          "Am Mittwoch um 10 Uhr.",
-          "Heute um 18 Uhr."
-        ],
-        answer:1
-      },
-
-      {
-        q:"Was ist kaputt?",
-        options:["Der Computer.","Der Drucker.","Das Handy."],
-        answer:0
-      },
-
-      {
-        q:"Wie viel kostet die Reparatur?",
-        options:["75 Euro 50.","57 Euro 50.","18 Euro 30."],
-        answer:1
-      },
-
-      {
-        q:"Wo genau treffen sich die Freunde?",
-        options:["Vor der Apotheke.","Vor dem Bahnhof.","Am Flughafen."],
-        answer:1
-      },
-
-      {
-        q:"Was soll Ricardo machen?",
-        options:[
-          "Nach Post und Blumen sehen.",
-          "Den Schlüssel holen.",
-          "Auf einen Anruf warten."
-        ],
-        answer:0
-      }
-
-    ],
-
-    lesen:[
-
-      {
-        text:
-`Sehr geehrte Frau Helbich,
-
-ich möchte meine Tochter Andrea entschuldigen. Sie hat Fieber und kann nicht zur Schule kommen. Nächste Woche kann sie wieder kommen. Können Sie mir bitte die Hausaufgaben sagen – am besten per Mail?
-
-Danke und viele Grüße
-Julia Schmidt`,
-        q:"Das Kind von Frau Schmidt ist krank.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Frau Schmidt möchte die Hausaufgaben wissen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Hallo Robert,
-
-wir möchten nächsten Sommer an der Nordsee Urlaub machen. Du warst doch letzten Sommer dort. Kannst du mir ein paar Tipps geben, kannst du mir etwas empfehlen? Vielleicht fahren wir auch ein paar Tage nach Hamburg.
-
-Viele Grüße
-Fabian`,
-        q:"Fabian sucht Informationen über Urlaub an der Nordsee.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Robert und Fabian waren noch nie an der Nordsee.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Fabian möchte Robert in Hamburg treffen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Sie suchen Informationen über München.",
-        options:["www.münchen-outdoor.de","www.meine-stadt.de"],
-        answer:1
-      },
-
-      {
-        q:"Sie möchten in einem Restaurant Fisch essen.",
-        options:["www.viva-andaluz.com","www.tapas-co.de"],
-        answer:0
-      },
-
-      {
-        q:"Sie machen im Sommer einen Deutschkurs in Berlin. Sie suchen ein billiges Zimmer.",
-        options:["www.wohnungsfinder.de","www.wohnungsbörse.de"],
-        answer:0
-      },
-
-      {
-        q:"Sie suchen eine Arbeit. Sie können nicht Auto fahren.",
-        options:["www.euro-pizza.de","www.praxis-markt.de"],
-        answer:1
-      },
-
-      {
-        q:"Sie suchen einen neuen Kühlschrank. Er soll nicht mehr als 300 Euro kosten.",
-        options:["www.alles-für-die-küche.de","www.küchenchef.de"],
-        answer:0
-      },
-
-      {
-        text:
-`In der Sprachschule:
-
-Griechischlehrer/in gesucht.
-Die Volkshochschule sucht ab sofort
-Kursleiter/innen für Griechischkurse
-auf allen Stufen.`,
-        q:"Hier gibt es Sprachkurse für Griechen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        text:
-`An der Post:
-
-Räder verboten.
-Sie dürfen hier keine Räder abstellen.`,
-        q:"Sie dürfen hier keine Räder abstellen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Beim Zahnarzt:
-
-Sprechstunde
-Mo–Di, Do–Fr 9–12 Uhr, 14–18 Uhr
-Mi 9–12 Uhr.`,
-        q:"Am Vormittag ist die Praxis immer geöffnet.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Im Kaufhaus:
-
-An den vier Sonntagen vor Weihnachten
-haben wir für Sie geöffnet.`,
-        q:"Am Sonntag vor Weihnachten können Sie einkaufen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`An einer Videothek:
-
-Neueröffnung am 1. Juni.
-In zwei Wochen können Sie in der Heidestraße
-DVDs kaufen und ausleihen.`,
-        q:"Sie können ab sofort in der Heidestraße DVDs bekommen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      }
-
-    ],
-
-    schreiben:[
-
-      {
-        type:"form",
-        title:"Schreiben Teil 1",
-        prompt:
-`Ihr Freund, Julian Kirkpatrick, möchte im Hotel Seeblick in Cuxhaven ein Zimmer für sich und seine Frau vom 3.–8. Juni reservieren. Seine Frau und er möchten nicht im Hotel frühstücken. Er möchte gern einen Fernseher im Zimmer haben und zwei Fahrräder mieten. Julian wohnt in Berlin.
-
-Füllen Sie die fünf fehlenden Informationen aus.`,
-        fields:[
-          {id:"s1",label:"PLZ / Ort",answer:"10961 Berlin"},
-          {id:"s2",label:"Abreise",answer:"8. Juni"},
-          {id:"s3",label:"Zimmer",answer:"Doppelzimmer"},
-          {id:"s4",label:"Frühstück",answer:"kein Frühstück"},
-          {id:"s5",label:"Besondere Wünsche",answer:"Fernseher, zwei Fahrräder"}
-        ]
-      },
-
-      {
-        type:"text",
-        title:"Schreiben Teil 2",
-        prompt:
-`Sie wollen heute Abend mit einem Freund / einer Freundin ins Kino gehen. Sie sind aber krank und können nicht.
-
-Schreiben Sie Ihrem Freund / Ihrer Freundin eine SMS.
-
-• Warum schreiben Sie?
-• Wie geht es Ihnen?
-• Wann treffen?
-
-Schreiben Sie circa 30 Wörter. Schreiben Sie auch eine Anrede und einen Gruß.`,
-        id:"s6"
-      }
-
-    ]
-  },
-
-
-  4:{
-    title:"Modelltest 4",
-    subtitle:"Hören + Lesen",
-    sections:["hoeren","lesen"],
-
-    hoeren:[
-
-      {
-        q:"Wann hat Herr Köhler einen Termin?",
-        options:[
-          "Am Donnerstag.",
-          "Am Freitagvormittag.",
-          "Am Freitagnachmittag."
-        ],
-        answer:2
-      },
-
-      {
-        q:"Was isst Julia zum Frühstück?",
-        options:[
-          "Brötchen, Eier und Schinken.",
-          "Brötchen, Eier und Käse.",
-          "Brot und Käse."
-        ],
-        answer:0
-      },
-
-      {
-        q:"Wann zieht Yvonne um?",
-        options:["Am 1.9.","Am 15.9.","Am 1.10."],
-        answer:1
-      },
-
-      {
-        q:"Was möchte John jetzt trinken?",
-        options:["Kaffee.","Apfelsaft.","Bier."],
-        answer:1
-      },
-
-      {
-        q:"Wann hat Sofia Zeit?",
-        options:[
-          "Am Mittwoch.",
-          "Am Donnerstagabend.",
-          "Am Donnerstagmorgen."
-        ],
-        answer:1
-      },
-
-      {
-        q:"Wie kommt man zur Apotheke?",
-        options:[
-          "Rechts und dann links.",
-          "Links und dann rechts.",
-          "Links und wieder links."
-        ],
-        answer:0
-      },
-
-      {
-        q:"Das Schwimmbad schließt jeden Tag um 20 Uhr.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Im ersten Stock kann man gut essen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Der Zug nach München fährt heute später.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Herrenschuhe kann man im 3. Stock kaufen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Wann will Anna die CDs abholen?",
-        options:[
-          "Am Wochenende.",
-          "Heute vor 20 Uhr.",
-          "Heute nach 20 Uhr."
-        ],
-        answer:2
-      },
-
-      {
-        q:"An welchem Tag kommt Herr Schmidt wieder zur Arbeit?",
-        options:[
-          "Morgen.",
-          "Am nächsten Freitag.",
-          "Am nächsten Montag."
-        ],
-        answer:2
-      },
-
-      {
-        q:"Wohin möchte Jan fahren?",
-        options:[
-          "In die Schweiz.",
-          "Nach Österreich.",
-          "Ans Meer."
-        ],
-        answer:1
-      },
-
-      {
-        q:"Wo ist das Konzert?",
-        options:[
-          "Auf dem Marktplatz.",
-          "In der Stadthalle.",
-          "In der Volkshochschule."
-        ],
-        answer:0
-      },
-
-      {
-        q:"Was will Anja am Sonntag machen?",
-        options:[
-          "In die Disco gehen.",
-          "Fernsehen.",
-          "Kochen."
-        ],
-        answer:1
-      }
-
-    ],
-
-    lesen:[
-
-      {
-        text:
-`Hallo Julia,
-
-ich muss heute länger im Büro bleiben. Ich weiß noch nicht, wie lange. Aber um 20 Uhr kann ich nicht beim Kino sein. Können wir morgen Abend ins Kino gehen? Auch um 20 Uhr? Ist das ok für dich?
-
-Liebe Grüße
-Andrea`,
-        q:"Andrea muss heute lange arbeiten.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Sie möchte Julia morgen treffen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Liebe Frau Schmidt,
-
-wir fahren doch nächsten Montag in den Urlaub, in die Türkei. Können Sie bitte nach der Post und den Blumen sehen? Als Dankeschön möchte ich Sie gerne zu einem Essen bei mir zu Hause einladen. Wann haben Sie Zeit? Dann gebe ich Ihnen auch die Wohnungsschlüssel.
-
-Danke
-Julia Berger`,
-        q:"Frau Berger braucht Hilfe.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Frau Schmidt soll die Schlüssel abholen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        q:"Frau Berger möchte ein Essen machen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        q:"Sie möchten Urlaub am Meer machen.",
-        options:[
-          "www.städtereisen.de",
-          "www.familienferien.de"
-        ],
-        answer:1
-      },
-
-      {
-        q:"Sie suchen einen Fußballverein.",
-        options:[
-          "www.fge.de",
-          "www.ballania.de"
-        ],
-        answer:0
-      },
-
-      {
-        q:"Sie sind in Frankfurt und möchten am Abend in Wien sein. Sie möchten mit dem Zug fahren.",
-        options:[
-          "www.reiseauskunft-bahn.de",
-          "www.reiseportal.de"
-        ],
-        answer:0
-      },
-
-      {
-        q:"Sie suchen einen billigen Fernseher.",
-        options:[
-          "www.tv-und-partner.de",
-          "www.hifi-und-co.com"
-        ],
-        answer:1
-      },
-
-      {
-        q:"Ihr Freund möchte Deutsch lernen. Er kann noch kein Deutsch.",
-        options:[
-          "www.vhs.de",
-          "www.sprachschule-mitte.de"
-        ],
-        answer:0
-      },
-
-      {
-        text:
-`In der Schule:
-
-Schulfest am nächsten Samstag.
-Alle Schülerinnen, Schüler und Eltern sind eingeladen.
-Kaffee/Kuchen in der Cafeteria.
-Abends Disco.`,
-        q:"In der Schule können Sie am Samstag tanzen.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Am Busbahnhof:
-
-Ab Januar günstige Busreisen in ganz Deutschland.
-Informationen: Schalter 12.`,
-        q:"Im Januar gibt es Busfahrten nach Deutschland.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        text:
-`Vor dem Ticketshop:
-
-Das Konzert der Toten Hosen in der Stadthalle ist ausverkauft.`,
-        q:"Es gibt keine Karten mehr.",
-        options:["Richtig","Falsch"],
-        answer:0
-      },
-
-      {
-        text:
-`Hessenticket DB:
-
-Bis zu 5 Personen können an einem Tag durch ganz Hessen
-mit Bus und Bahn für 31 € fahren.`,
-        q:"Das Hessenticket ist nur für Gruppen ab 5 Personen.",
-        options:["Richtig","Falsch"],
-        answer:1
-      },
-
-      {
-        text:
-`Beim Arzt:
-
-In der Praxis sind Handys verboten.
-Sie dürfen mit dem Handy nicht telefonieren.`,
-        q:"Sie dürfen mit dem Handy nicht telefonieren.",
-        options:["Richtig","Falsch"],
-        answer:0
-      }
-
-    ],
-
-    schreiben:[]
-  }
+id:"s6"
+}
+
+]
+},
+
+
+2:{
+title:"Modelltest 2",
+subtitle:"A1 Prüfungstraining",
+sections:["hoeren","lesen","schreiben"],
+
+hoeren:[
+
+{
+q:"Wie spät ist es jetzt?",
+options:["Halb 3.","Halb 4.","Zehn nach halb 4."],
+answer:1
+},
+
+{
+q:"Welches Zimmer bekommt Herr Pauli?",
+options:["Zimmer 121.","Zimmer 212.","Zimmer 211."],
+answer:2
+},
+
+{
+q:"Was soll Anja mitbringen?",
+options:["Getränke.","Essen.","Musik."],
+answer:2
+},
+
+{
+q:"Mit wem telefoniert Tom?",
+options:["Mit seiner Mutter.","Mit seiner Tante.","Mit seiner Freundin."],
+answer:2
+},
+
+{
+q:"Wo ist die Frau?",
+options:["Am Schwimmbad.","Am Bahnhof.","An der Sprachschule."],
+answer:1
+},
+
+{
+q:"Heute fahren keine U-Bahnen zum Südbahnhof.",
+options:["Richtig","Falsch"],
+answer:0
+},
+
+{
+q:"Kaffee ist heute billig.",
+options:["Richtig","Falsch"],
+answer:0
+},
+
+{
+q:"Der Bus kommt um 17.30 Uhr in Friedberg an.",
+options:["Richtig","Falsch"],
+answer:1
+},
+
+{
+q:"Im Zugrestaurant gibt es heute keinen Kuchen.",
+options:["Richtig","Falsch"],
+answer:1
+},
+
+{
+q:"Wann hat das Reisebüro wieder geöffnet?",
+options:["Am 15. April.","Am 30. April.","Am 2. Mai."],
+answer:2
+},
+
+{
+q:"Wo treffen sich die Freundinnen?",
+options:["Vor dem Kino.","In der Disco.","Vor der Schule."],
+answer:2
+},
+
+{
+q:"Wie ist die Nummer der Volkshochschule?",
+options:["0692126564","069 21 2 56 46","0692125664"],
+answer:1
+},
+
+{
+q:"Wie kommt Ewa zur Schule?",
+options:["Mit dem Bus.","Mit dem Fahrrad.","Zu Fuß."],
+answer:1
+},
+
+{
+q:"Was soll Frau Krüger mitbringen?",
+options:["Ein Formular.","Ihren Ausweis.","Einen Computer."],
+answer:1
+},
+
+{
+q:"Was soll Frau Krüger mitbringen?",
+options:["Ein Formular.","Ihren Ausweis.","Einen Computer."],
+answer:1
+}
+
+],
+
+lesen:[],
+schreiben:[]
+},
+
+
+3:{
+title:"Modelltest 3",
+subtitle:"A1 Prüfungstraining",
+sections:["hoeren","lesen","schreiben"],
+
+hoeren:[
+
+{
+q:"Was bestellt die Frau?",
+options:["Fisch","Suppe","Salat"],
+answer:1
+},
+
+{
+q:"In welche Klasse geht Anja?",
+options:["erste","zweite","siebte"],
+answer:1
+},
+
+{
+q:"Was macht Ewa heute Abend?",
+options:["Ins Café gehen.","Einen Film sehen.","Lernen."],
+answer:2
+},
+
+{
+q:"Was kosten die Tomaten?",
+options:["1 € 15","1 € 50","1 € 65"],
+answer:1
+},
+
+{
+q:"Wie lange dauert der Deutschkurs?",
+options:["5 Tage","20 Tage","1 Monat"],
+answer:1
+},
+
+{
+q:"Wann ist die Party?",
+options:["Am Samstag.","Am Sonntag.","Am Freitag."],
+answer:0
+},
+
+{
+q:"Die Fahrgäste nach Bonn müssen umsteigen.",
+options:["Richtig","Falsch"],
+answer:0
+},
+
+{
+q:"Frau Köhler soll in die Halle A kommen.",
+options:["Richtig","Falsch"],
+answer:0
+},
+
+{
+q:"Sie können noch 15 Minuten einkaufen.",
+options:["Richtig","Falsch"],
+answer:0
+},
+
+{
+q:"Der Zug nach Heidelberg fährt von Gleis 19.",
+options:["Richtig","Falsch"],
+answer:1
+},
+
+{
+q:"Wann kann Herr Lohmann einen Termin haben?",
+options:[
+"Am Dienstag um 14 Uhr.",
+"Am Mittwoch um 10 Uhr.",
+"Heute um 18 Uhr."
+],
+answer:1
+},
+
+{
+q:"Was ist kaputt?",
+options:["Der Computer.","Der Drucker.","Das Handy."],
+answer:0
+},
+
+{
+q:"Wie viel kostet die Reparatur?",
+options:["75 Euro 50.","57 Euro 50.","18 Euro 30."],
+answer:1
+},
+
+{
+q:"Wo genau treffen sich die Freunde?",
+options:["Vor der Apotheke.","Vor dem Bahnhof.","Am Flughafen."],
+answer:1
+},
+
+{
+q:"Was soll Ricardo machen?",
+options:[
+"Nach Post und Blumen sehen.",
+"Den Schlüssel holen.",
+"Auf einen Anruf warten."
+],
+answer:0
+}
+
+],
+
+lesen:[],
+schreiben:[]
+},
+
+
+4:{
+title:"Modelltest 4",
+subtitle:"Hören + Lesen",
+sections:["hoeren","lesen"],
+
+hoeren:[
+
+{
+q:"Wann hat Herr Köhler einen Termin?",
+options:[
+"Am Donnerstag.",
+"Am Freitagvormittag.",
+"Am Freitagnachmittag."
+],
+answer:2
+},
+
+{
+q:"Was isst Julia zum Frühstück?",
+options:[
+"Brötchen, Eier und Schinken.",
+"Brötchen, Eier und Käse.",
+"Brot und Käse."
+],
+answer:0
+},
+
+{
+q:"Wann zieht Yvonne um?",
+options:["Am 1.9.","Am 15.9.","Am 1.10."],
+answer:1
+},
+
+{
+q:"Was möchte John jetzt trinken?",
+options:["Kaffee.","Apfelsaft.","Bier."],
+answer:1
+},
+
+{
+q:"Wann hat Sofia Zeit?",
+options:[
+"Am Mittwoch.",
+"Am Donnerstagabend.",
+"Am Donnerstagmorgen."
+],
+answer:1
+},
+
+{
+q:"Wie kommt man zur Apotheke?",
+options:[
+"Rechts und dann links.",
+"Links und dann rechts.",
+"Links und wieder links."
+],
+answer:0
+},
+
+{
+q:"Das Schwimmbad schließt jeden Tag um 20 Uhr.",
+options:["Richtig","Falsch"],
+answer:1
+},
+
+{
+q:"Im ersten Stock kann man gut essen.",
+options:["Richtig","Falsch"],
+answer:1
+},
+
+{
+q:"Der Zug nach München fährt heute später.",
+options:["Richtig","Falsch"],
+answer:0
+},
+
+{
+q:"Herrenschuhe kann man im 3. Stock kaufen.",
+options:["Richtig","Falsch"],
+answer:0
+},
+
+{
+q:"Wann will Anna die CDs abholen?",
+options:[
+"Am Wochenende.",
+"Heute vor 20 Uhr.",
+"Heute nach 20 Uhr."
+],
+answer:2
+},
+
+{
+q:"An welchem Tag kommt Herr Schmidt wieder zur Arbeit?",
+options:[
+"Morgen.",
+"Am nächsten Freitag.",
+"Am nächsten Montag."
+],
+answer:2
+},
+
+{
+q:"Wohin möchte Jan fahren?",
+options:[
+"In die Schweiz.",
+"Nach Österreich.",
+"Ans Meer."
+],
+answer:1
+},
+
+{
+q:"Wo ist das Konzert?",
+options:[
+"Auf dem Marktplatz.",
+"In der Stadthalle.",
+"In der Volkshochschule."
+],
+answer:0
+},
+
+{
+q:"Was will Anja am Sonntag machen?",
+options:[
+"In die Disco gehen.",
+"Fernsehen.",
+"Kochen."
+],
+answer:1
+}
+
+],
+
+lesen:[],
+schreiben:[]
+}
 
 };
 
 
-/* -----------------------------
-   DOM HELPERS
------------------------------ */
+/* =========================================================
+   DOM
+========================================================= */
 
-const $ = id => document.getElementById(id);
+const $=id=>document.getElementById(id);
 
 function show(id){
-  $(id).classList.remove("hidden");
+$(id).classList.remove("hidden");
 }
 
 function hide(id){
-  $(id).classList.add("hidden");
+$(id).classList.add("hidden");
 }
 
 
-/* -----------------------------
+/* =========================================================
    LANDING
------------------------------ */
+========================================================= */
 
 $("continueBtn").addEventListener("click",startPicker);
 
-$("studentName").addEventListener("keydown",function(e){
-  if(e.key === "Enter"){
-    startPicker();
-  }
+$("studentName").addEventListener("keydown",e=>{
+if(e.key==="Enter") startPicker();
 });
 
 function startPicker(){
 
-  const name = $("studentName").value.trim();
+const name=$("studentName").value.trim();
 
-  if(!name){
-    $("studentName").focus();
-    $("studentName").style.borderColor = "var(--red)";
-    return;
-  }
+if(!name){
+$("studentName").focus();
+$("studentName").style.borderColor="var(--red)";
+return;
+}
 
-  state.studentName = name;
+state.studentName=name;
 
-  $("pickerName").textContent = name;
+$("pickerName").textContent=name;
 
-  hide("landingPage");
-  show("pickerPage");
+hide("landingPage");
+show("pickerPage");
 
-  renderTestCards();
+renderTestCards();
 }
 
 
-/* -----------------------------
-   TEST PICKER
------------------------------ */
+/* =========================================================
+   PICKER
+========================================================= */
 
 function renderTestCards(){
 
-  const container = $("testCards");
-  container.innerHTML = "";
+const container=$("testCards");
 
-  Object.keys(TESTS).forEach(id => {
+container.innerHTML="";
 
-    const test = TESTS[id];
+Object.keys(TESTS).forEach(id=>{
 
-    const card = document.createElement("section");
-    card.className = "card testCard";
+const test=TESTS[id];
 
-    const writingAvailable = test.sections.includes("schreiben");
+const card=document.createElement("section");
 
-    card.innerHTML = `
-      <div class="testNumber">MODEL TEST ${id}</div>
-      <h3>${escapeHTML(test.title)}</h3>
-      <p>${escapeHTML(test.subtitle)}</p>
+card.className="card testCard";
 
-      <div class="testMeta">
-        <span class="chip">Hören 15</span>
-        <span class="chip">Lesen 15</span>
-        ${writingAvailable ? '<span class="chip">Schreiben</span>' : ""}
-        <span class="chip">70 MIN</span>
-      </div>
+const writingAvailable=test.sections.includes("schreiben");
 
-      <button class="testButton">
-        START MODEL TEST →
-      </button>
-    `;
+card.innerHTML=`
 
-    card.querySelector("button").addEventListener("click",()=>{
-      startTest(Number(id));
-    });
+<div class="testNumber">MODEL TEST ${id}</div>
 
-    container.appendChild(card);
-  });
+<h3>${escapeHTML(test.title)}</h3>
+
+<p>${escapeHTML(test.subtitle)}</p>
+
+<div class="testMeta">
+
+<span class="chip">Hören 15</span>
+
+<span class="chip">Lesen 15</span>
+
+${writingAvailable?'<span class="chip">Schreiben</span>':""}
+
+<span class="chip">70 MIN</span>
+
+</div>
+
+<button class="testButton">
+START MODEL TEST →
+</button>
+
+`;
+
+card.querySelector("button").addEventListener("click",()=>{
+startTest(Number(id));
+});
+
+container.appendChild(card);
+
+});
+
 }
 
 
-/* -----------------------------
+/* =========================================================
    START TEST
------------------------------ */
+========================================================= */
 
 function startTest(id){
 
-  state.testId = id;
-  state.currentSection = "hoeren";
-  state.answers = {};
-  state.writing = {};
-  state.submitted = false;
-  state.timerSeconds = 70 * 60;
+state.testId=id;
+state.currentSection="hoeren";
+state.answers={};
+state.writing={};
+state.submitted=false;
+state.timerSeconds=70*60;
 
-  hide("landingPage");
-  hide("pickerPage");
-  hide("resultPage");
-  show("examPage");
+hide("landingPage");
+hide("pickerPage");
+hide("resultPage");
 
-  $("examName").textContent = TESTS[id].title;
-  $("examStudent").textContent = state.studentName;
+show("examPage");
 
-  renderTabs();
-  renderSection();
-  updateProgress();
-  startTimer();
+$("examName").textContent=TESTS[id].title;
+$("examStudent").textContent=state.studentName;
+
+renderTabs();
+renderSection();
+updateProgress();
+startTimer();
+
 }
 
 
-/* -----------------------------
+/* =========================================================
    TABS
------------------------------ */
+========================================================= */
 
 function renderTabs(){
 
-  const test = TESTS[state.testId];
-  const tabs = $("tabs");
+const test=TESTS[state.testId];
 
-  tabs.innerHTML = "";
+const tabs=$("tabs");
 
-  test.sections.forEach(section=>{
+tabs.innerHTML="";
 
-    const button = document.createElement("button");
+test.sections.forEach(section=>{
 
-    button.className =
-      "tab " +
-      (section === state.currentSection ? "active" : "");
+const button=document.createElement("button");
 
-    button.textContent =
-      section === "hoeren" ? "HÖREN" :
-      section === "lesen" ? "LESEN" :
-      "SCHREIBEN";
+button.className=
+"tab "+
+(section===state.currentSection?"active":"");
 
-    button.addEventListener("click",()=>{
-      state.currentSection = section;
-      renderTabs();
-      renderSection();
-      updateProgress();
-      window.scrollTo({top:0,behavior:"smooth"});
-    });
+button.textContent=
+section==="hoeren"?"HÖREN":
+section==="lesen"?"LESEN":
+"SCHREIBEN";
 
-    tabs.appendChild(button);
-  });
+button.addEventListener("click",()=>{
+
+stopSpeech();
+
+state.currentSection=section;
+
+renderTabs();
+renderSection();
+updateProgress();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+});
+
+tabs.appendChild(button);
+
+});
+
 }
 
 
-/* -----------------------------
-   SECTION RENDER
------------------------------ */
+/* =========================================================
+   SECTION
+========================================================= */
 
 function renderSection(){
 
-  const test = TESTS[state.testId];
+const test=TESTS[state.testId];
 
-  if(state.currentSection === "hoeren"){
-    renderObjective(test.hoeren,"Hören");
-  }
+if(state.currentSection==="hoeren"){
 
-  else if(state.currentSection === "lesen"){
-    renderObjective(test.lesen,"Lesen");
-  }
+renderObjective(
+test.hoeren,
+"Hören",
+true
+);
 
-  else{
-    renderWriting(test.schreiben);
-  }
+}
+
+else if(state.currentSection==="lesen"){
+
+renderObjective(
+test.lesen,
+"Lesen",
+false
+);
+
+}
+
+else{
+
+renderWriting(test.schreiben);
+
+}
 
 }
 
 
-/* -----------------------------
-   OBJECTIVE QUESTIONS
------------------------------ */
+/* =========================================================
+   AUDIO ENGINE
+========================================================= */
 
-function renderObjective(items,sectionName){
+let currentSpeech=null;
+let speechQueue=[];
+let speechIndex=0;
 
-  const container = $("sectionContent");
-  container.innerHTML = "";
 
-  items.forEach((item,index)=>{
+/*
+  Browser speech engine.
+  This creates actual playable German speech
+  without requiring an MP3.
+*/
 
-    const question = document.createElement("div");
-    question.className = "card question";
+function getGermanVoice(){
 
-    let source = "";
+const voices=window.speechSynthesis
+?window.speechSynthesis.getVoices()
+:[];
 
-    if(item.text){
-      source = `
-        <div class="sourceText">
-          ${escapeHTML(item.text)}
-        </div>
-      `;
-    }
+let voice=
+voices.find(v=>
+v.lang &&
+v.lang.toLowerCase().startsWith("de-de")
+);
 
-    let options = "";
+if(!voice){
 
-    item.options.forEach((option,optIndex)=>{
+voice=
+voices.find(v=>
+v.lang &&
+v.lang.toLowerCase().startsWith("de")
+);
 
-      const key =
-        state.currentSection +
-        "_" +
-        index;
+}
 
-      const selected =
-        state.answers[key] === optIndex;
-
-      options += `
-        <label class="option ${selected ? "selected" : ""}">
-          <input
-            type="radio"
-            name="${key}"
-            value="${optIndex}"
-            ${selected ? "checked" : ""}
-          >
-          <span>${escapeHTML(String(option))}</span>
-        </label>
-      `;
-    });
-
-    question.innerHTML = `
-      ${source}
-
-      <div class="qHead">
-        <div class="qNo">${index + 1}</div>
-        <div class="qText">${escapeHTML(item.q)}</div>
-      </div>
-
-      <div class="options">
-        ${options}
-      </div>
-    `;
-
-    question
-      .querySelectorAll("input[type=radio]")
-      .forEach(input=>{
-
-        input.addEventListener("change",()=>{
-
-          const key =
-            state.currentSection +
-            "_" +
-            index;
-
-          state.answers[key] =
-            Number(input.value);
-
-          renderSection();
-          updateProgress();
-        });
-
-      });
-
-    container.appendChild(question);
-  });
+return voice||null;
 }
 
 
-/* -----------------------------
+function speakGerman(text,onEnd=null){
+
+if(!("speechSynthesis" in window)){
+
+alert(
+"German audio is not supported by this browser. Please open the website in Chrome, Safari or Edge."
+);
+
+return;
+
+}
+
+stopSpeech();
+
+const cleanText=String(text)
+.replace(/€/g," Euro")
+.replace(/–/g," bis ")
+.replace(/\n+/g,". ");
+
+const utterance=
+new SpeechSynthesisUtterance(cleanText);
+
+utterance.lang="de-DE";
+utterance.rate=.88;
+utterance.pitch=1;
+utterance.volume=1;
+
+const voice=getGermanVoice();
+
+if(voice){
+utterance.voice=voice;
+}
+
+currentSpeech=utterance;
+
+utterance.onend=()=>{
+
+currentSpeech=null;
+
+if(onEnd){
+onEnd();
+}
+
+};
+
+utterance.onerror=()=>{
+
+currentSpeech=null;
+
+if(onEnd){
+onEnd();
+}
+
+};
+
+window.speechSynthesis.speak(utterance);
+
+}
+
+
+function stopSpeech(){
+
+if("speechSynthesis" in window){
+
+window.speechSynthesis.cancel();
+
+}
+
+currentSpeech=null;
+speechQueue=[];
+speechIndex=0;
+
+}
+
+
+/*
+  Read one complete Hören question:
+  question + options.
+*/
+
+function speakQuestion(testId,index,button){
+
+const item=TESTS[testId].hoeren[index];
+
+if(!item)return;
+
+if(
+currentSpeech &&
+button.classList.contains("playing")
+){
+
+stopSpeech();
+
+button.classList.remove("playing");
+button.textContent="🔊 PLAY AUDIO";
+
+return;
+
+}
+
+document
+.querySelectorAll(".questionAudio button")
+.forEach(b=>{
+b.classList.remove("playing");
+b.textContent="🔊 PLAY AUDIO";
+});
+
+button.classList.add("playing");
+button.textContent="⏹ STOP AUDIO";
+
+let text=
+`Frage ${index+1}. ${item.q}. `;
+
+item.options.forEach((option,i)=>{
+
+const letter=
+i===0?"A":
+i===1?"B":
+"C";
+
+text+=`${letter}. ${option}. `;
+
+});
+
+speakGerman(text,()=>{
+
+button.classList.remove("playing");
+button.textContent="🔊 PLAY AUDIO";
+
+});
+
+}
+
+
+/*
+  Start complete Hören section.
+*/
+
+function playFullHoeren(){
+
+stopSpeech();
+
+const items=TESTS[state.testId].hoeren;
+
+speechQueue=[];
+
+items.forEach((item,index)=>{
+
+let text=
+`Frage ${index+1}. ${item.q}. `;
+
+item.options.forEach((option,i)=>{
+
+const letter=
+i===0?"A":
+i===1?"B":
+"C";
+
+text+=`${letter}. ${option}. `;
+
+});
+
+speechQueue.push(text);
+
+});
+
+speechIndex=0;
+
+playNextSpeech();
+
+}
+
+
+function playNextSpeech(){
+
+if(speechIndex>=speechQueue.length){
+
+document
+.querySelectorAll(".fullAudioButton")
+.forEach(btn=>{
+btn.textContent="▶️ START HÖREN";
+});
+
+return;
+
+}
+
+document
+.querySelectorAll(".fullAudioButton")
+.forEach(btn=>{
+btn.textContent="⏸ HÖREN LÄUFT...";
+});
+
+const text=speechQueue[speechIndex];
+
+const utterance=
+new SpeechSynthesisUtterance(text);
+
+utterance.lang="de-DE";
+utterance.rate=.88;
+utterance.pitch=1;
+utterance.volume=1;
+
+const voice=getGermanVoice();
+
+if(voice){
+utterance.voice=voice;
+}
+
+currentSpeech=utterance;
+
+utterance.onend=()=>{
+
+speechIndex++;
+
+setTimeout(
+playNextSpeech,
+700
+);
+
+};
+
+utterance.onerror=()=>{
+
+speechIndex++;
+
+setTimeout(
+playNextSpeech,
+300
+);
+
+};
+
+window.speechSynthesis.speak(utterance);
+
+}
+
+
+/* =========================================================
+   HÖREN PLAYER UI
+========================================================= */
+
+function renderAudioPlayer(){
+
+const realAudio=AUDIO_FILES[state.testId];
+
+return `
+
+<section class="card audioBox">
+
+<div class="audioTop">
+
+<div>
+
+<div class="audioTitle">
+🎧 HÖREN — ${escapeHTML(TESTS[state.testId].title)}
+</div>
+
+<div class="audioSub">
+German audio is available directly on this page.
+</div>
+
+</div>
+
+<div class="audioIcon">
+🔊
+</div>
+
+</div>
+
+
+<div class="audioControls">
+
+<button
+type="button"
+class="audioButton fullAudioButton"
+onclick="playFullHoeren()">
+
+▶️ START HÖREN
+
+</button>
+
+
+<button
+type="button"
+class="audioButton stop"
+onclick="stopSpeech()">
+
+⏹ STOP
+
+</button>
+
+</div>
+
+
+<audio
+id="realAudioPlayer"
+controls
+preload="metadata"
+style="width:100%;margin-top:15px;display:none"
+>
+
+<source
+src="${escapeHTML(realAudio)}"
+type="audio/mpeg"
+>
+
+</audio>
+
+
+<div class="audioStatus">
+
+If the official MP3 is supplied, it can be played here.
+Otherwise the built-in German audio generator is used automatically.
+
+</div>
+
+</section>
+
+`;
+
+}
+
+
+/* =========================================================
+   OBJECTIVE
+========================================================= */
+
+function renderObjective(items,sectionName,isHoeren){
+
+const container=$("sectionContent");
+
+container.innerHTML="";
+
+if(isHoeren){
+
+container.innerHTML+=
+renderAudioPlayer();
+
+}
+
+if(!items || !items.length){
+
+container.innerHTML+=`
+
+<section class="card writeBox">
+
+<h3>${escapeHTML(sectionName)}</h3>
+
+<p class="writePrompt">
+No questions available.
+</p>
+
+</section>
+
+`;
+
+return;
+
+}
+
+
+items.forEach((item,index)=>{
+
+const question=
+document.createElement("div");
+
+question.className=
+"card question";
+
+
+let source="";
+
+if(item.text){
+
+source=`
+
+<div class="sourceText">
+${escapeHTML(item.text)}
+</div>
+
+`;
+
+}
+
+
+let questionAudio="";
+
+if(isHoeren){
+
+questionAudio=`
+
+<div class="questionAudio">
+
+<button
+type="button"
+onclick="speakQuestion(
+${state.testId},
+${index},
+this
+)">
+
+🔊 PLAY AUDIO
+
+</button>
+
+</div>
+
+`;
+
+}
+
+
+let options="";
+
+item.options.forEach((option,optIndex)=>{
+
+const key=
+state.currentSection+
+"_"+index;
+
+const selected=
+state.answers[key]===optIndex;
+
+options+=`
+
+<label class="option ${selected?"selected":""}">
+
+<input
+type="radio"
+name="${key}"
+value="${optIndex}"
+${selected?"checked":""}
+>
+
+<span>
+${escapeHTML(String(option))}
+</span>
+
+</label>
+
+`;
+
+});
+
+
+question.innerHTML=`
+
+${source}
+
+<div class="qHead">
+
+<div class="qNo">
+${index+1}
+</div>
+
+<div class="qText">
+${escapeHTML(item.q)}
+</div>
+
+</div>
+
+${questionAudio}
+
+<div class="options">
+${options}
+</div>
+
+`;
+
+
+question
+.querySelectorAll("input[type=radio]")
+.forEach(input=>{
+
+input.addEventListener("change",()=>{
+
+const key=
+state.currentSection+
+"_"+index;
+
+state.answers[key]=
+Number(input.value);
+
+renderSection();
+
+updateProgress();
+
+});
+
+});
+
+
+container.appendChild(question);
+
+});
+
+}
+
+
+/* =========================================================
    WRITING
------------------------------ */
+========================================================= */
 
 function renderWriting(items){
 
-  const container = $("sectionContent");
-  container.innerHTML = "";
+const container=$("sectionContent");
 
-  if(!items || !items.length){
+container.innerHTML="";
 
-    container.innerHTML = `
-      <section class="card writeBox">
-        <h3>Schreiben</h3>
-        <p class="writePrompt">
-          Dieser Quellentest enthält für Modelltest 4 keinen
-          Schreiben-Teil.
-        </p>
-      </section>
-    `;
+if(!items || !items.length){
 
-    return;
-  }
+container.innerHTML=`
 
-  items.forEach(item=>{
+<section class="card writeBox">
 
-    const box = document.createElement("section");
-    box.className = "card writeBox";
+<h3>Schreiben</h3>
 
-    if(item.type === "form"){
+<p class="writePrompt">
+Dieser Quellentest enthält für Modelltest 4 keinen
+Schreiben-Teil.
+</p>
 
-      let fields = "";
+</section>
 
-      item.fields.forEach(field=>{
+`;
 
-        fields += `
-          <div style="margin-top:14px">
-            <label style="display:block;color:#aaa;font-size:13px;margin-bottom:7px">
-              ${escapeHTML(field.label)}
-            </label>
-
-            <input
-              type="text"
-              data-writing-id="${field.id}"
-              value="${escapeHTML(state.writing[field.id] || "")}"
-              placeholder="Ihre Antwort"
-            >
-          </div>
-        `;
-      });
-
-      box.innerHTML = `
-        <h3>${escapeHTML(item.title)}</h3>
-
-        <div class="writePrompt">
-          ${escapeHTML(item.prompt)}
-        </div>
-
-        ${fields}
-      `;
-
-    }else{
-
-      const saved = state.writing[item.id] || "";
-
-      box.innerHTML = `
-        <h3>${escapeHTML(item.title)}</h3>
-
-        <div class="writePrompt">
-          ${escapeHTML(item.prompt)}
-        </div>
-
-        <textarea
-          data-writing-id="${item.id}"
-          placeholder="Schreiben Sie hier Ihre Antwort..."
-        >${escapeHTML(saved)}</textarea>
-
-        <div class="keyboard">
-
-          <button type="button" data-char="ä">ä</button>
-          <button type="button" data-char="ö">ö</button>
-          <button type="button" data-char="ü">ü</button>
-          <button type="button" data-char="Ä">Ä</button>
-          <button type="button" data-char="Ö">Ö</button>
-          <button type="button" data-char="Ü">Ü</button>
-          <button type="button" data-char="ß">ß</button>
-
-        </div>
-      `;
-    }
-
-    container.appendChild(box);
-  });
-
-
-  container.querySelectorAll("[data-writing-id]")
-    .forEach(element=>{
-
-      element.addEventListener("input",()=>{
-
-        state.writing[element.dataset.writingId] =
-          element.value;
-
-        updateProgress();
-      });
-
-    });
-
-
-  container.querySelectorAll("[data-char]")
-    .forEach(button=>{
-
-      button.addEventListener("click",()=>{
-
-        const textarea =
-          container.querySelector("textarea");
-
-        if(!textarea) return;
-
-        insertAtCursor(
-          textarea,
-          button.dataset.char
-        );
-
-        state.writing[textarea.dataset.writingId] =
-          textarea.value;
-
-        textarea.focus();
-
-        updateProgress();
-      });
-
-    });
+return;
 
 }
 
 
-/* -----------------------------
-   INSERT UMLAUT
------------------------------ */
+items.forEach(item=>{
+
+const box=
+document.createElement("section");
+
+box.className="card writeBox";
+
+
+if(item.type==="form"){
+
+let fields="";
+
+item.fields.forEach(field=>{
+
+fields+=`
+
+<div style="margin-top:14px">
+
+<label
+style="display:block;color:#aaa;font-size:13px;margin-bottom:7px">
+
+${escapeHTML(field.label)}
+
+</label>
+
+<input
+type="text"
+data-writing-id="${field.id}"
+value="${escapeHTML(
+state.writing[field.id]||""
+)}"
+placeholder="Ihre Antwort"
+>
+
+</div>
+
+`;
+
+});
+
+
+box.innerHTML=`
+
+<h3>
+${escapeHTML(item.title)}
+</h3>
+
+<div class="writePrompt">
+${escapeHTML(item.prompt)}
+</div>
+
+${fields}
+
+`;
+
+}
+
+
+else{
+
+const saved=
+state.writing[item.id]||"";
+
+box.innerHTML=`
+
+<h3>
+${escapeHTML(item.title)}
+</h3>
+
+<div class="writePrompt">
+${escapeHTML(item.prompt)}
+</div>
+
+<textarea
+data-writing-id="${item.id}"
+placeholder="Schreiben Sie hier Ihre Antwort..."
+>${escapeHTML(saved)}</textarea>
+
+<div class="keyboard">
+
+<button type="button" data-char="ä">ä</button>
+<button type="button" data-char="ö">ö</button>
+<button type="button" data-char="ü">ü</button>
+<button type="button" data-char="Ä">Ä</button>
+<button type="button" data-char="Ö">Ö</button>
+<button type="button" data-char="Ü">Ü</button>
+<button type="button" data-char="ß">ß</button>
+
+</div>
+
+`;
+
+}
+
+container.appendChild(box);
+
+});
+
+
+container
+.querySelectorAll("[data-writing-id]")
+.forEach(element=>{
+
+element.addEventListener("input",()=>{
+
+state.writing[element.dataset.writingId]=
+element.value;
+
+updateProgress();
+
+});
+
+});
+
+
+container
+.querySelectorAll("[data-char]")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const textarea=
+container.querySelector("textarea");
+
+if(!textarea)return;
+
+insertAtCursor(
+textarea,
+button.dataset.char
+);
+
+state.writing[
+textarea.dataset.writingId
+]=textarea.value;
+
+textarea.focus();
+
+updateProgress();
+
+});
+
+});
+
+}
+
+
+/* =========================================================
+   UMLAUT
+========================================================= */
 
 function insertAtCursor(textarea,text){
 
-  const start = textarea.selectionStart;
-  const end = textarea.selectionEnd;
+const start=textarea.selectionStart;
+const end=textarea.selectionEnd;
 
-  textarea.value =
-    textarea.value.substring(0,start) +
-    text +
-    textarea.value.substring(end);
+textarea.value=
+textarea.value.substring(0,start)+
+text+
+textarea.value.substring(end);
 
-  textarea.selectionStart =
-    textarea.selectionEnd =
-    start + text.length;
+textarea.selectionStart=
+textarea.selectionEnd=
+start+text.length;
+
 }
 
 
-/* -----------------------------
+/* =========================================================
    PROGRESS
------------------------------ */
+========================================================= */
 
 function updateProgress(){
 
-  const test = TESTS[state.testId];
+const test=TESTS[state.testId];
 
-  let total = 0;
-  let answered = 0;
+let total=0;
+let answered=0;
 
-  if(test.hoeren){
 
-    total += test.hoeren.length;
+if(test.hoeren){
 
-    test.hoeren.forEach((_,i)=>{
-      if(state.answers["hoeren_" + i] !== undefined){
-        answered++;
-      }
-    });
-  }
+total+=test.hoeren.length;
 
-  if(test.lesen){
+test.hoeren.forEach((_,i)=>{
 
-    total += test.lesen.length;
+if(
+state.answers["hoeren_"+i]!==undefined
+){
 
-    test.lesen.forEach((_,i)=>{
-      if(state.answers["lesen_" + i] !== undefined){
-        answered++;
-      }
-    });
-  }
+answered++;
 
-  if(test.schreiben){
+}
 
-    test.schreiben.forEach(item=>{
+});
 
-      if(item.type === "form"){
-
-        item.fields.forEach(field=>{
-          total++;
-
-          if(
-            state.writing[field.id] &&
-            state.writing[field.id].trim()
-          ){
-            answered++;
-          }
-        });
-
-      }else{
-
-        total++;
-
-        if(
-          state.writing[item.id] &&
-          state.writing[item.id].trim()
-        ){
-          answered++;
-        }
-      }
-
-    });
-
-  }
-
-  $("progressText").textContent =
-    `${answered} / ${total} answered`;
-
-  $("sectionText").textContent =
-    state.currentSection === "hoeren"
-      ? "Hören"
-      : state.currentSection === "lesen"
-      ? "Lesen"
-      : "Schreiben";
-
-  $("progressBar").style.width =
-    total
-      ? `${Math.round(answered / total * 100)}%`
-      : "0%";
 }
 
 
-/* -----------------------------
-   TIMER
------------------------------ */
+if(test.lesen){
 
-let timerInterval = null;
+total+=test.lesen.length;
+
+test.lesen.forEach((_,i)=>{
+
+if(
+state.answers["lesen_"+i]!==undefined
+){
+
+answered++;
+
+}
+
+});
+
+}
+
+
+if(test.schreiben){
+
+test.schreiben.forEach(item=>{
+
+if(item.type==="form"){
+
+item.fields.forEach(field=>{
+
+total++;
+
+if(
+state.writing[field.id] &&
+state.writing[field.id].trim()
+){
+
+answered++;
+
+}
+
+});
+
+}
+
+else{
+
+total++;
+
+if(
+state.writing[item.id] &&
+state.writing[item.id].trim()
+){
+
+answered++;
+
+}
+
+}
+
+});
+
+}
+
+
+$("progressText").textContent=
+`${answered} / ${total} answered`;
+
+$("sectionText").textContent=
+state.currentSection==="hoeren"
+?"Hören":
+state.currentSection==="lesen"
+?"Lesen":
+"Schreiben";
+
+$("progressBar").style.width=
+total
+?`${Math.round(answered/total*100)}%`
+:"0%";
+
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+let timerInterval=null;
 
 function startTimer(){
 
-  clearInterval(timerInterval);
+clearInterval(timerInterval);
 
-  updateTimer();
+updateTimer();
 
-  timerInterval = setInterval(()=>{
+timerInterval=setInterval(()=>{
 
-    if(state.submitted){
-      clearInterval(timerInterval);
-      return;
-    }
+if(state.submitted){
 
-    state.timerSeconds--;
+clearInterval(timerInterval);
 
-    updateTimer();
+return;
 
-    if(state.timerSeconds <= 0){
+}
 
-      clearInterval(timerInterval);
+state.timerSeconds--;
 
-      alert("Die Prüfungszeit ist abgelaufen. Der Test wird jetzt abgegeben.");
+updateTimer();
 
-      submitTest();
-    }
+if(state.timerSeconds<=0){
 
-  },1000);
+clearInterval(timerInterval);
+
+stopSpeech();
+
+alert(
+"Die Prüfungszeit ist abgelaufen. Der Test wird jetzt abgegeben."
+);
+
+submitTest();
+
+}
+
+},1000);
+
 }
 
 
 function updateTimer(){
 
-  const minutes =
-    Math.floor(state.timerSeconds / 60);
+const minutes=
+Math.floor(state.timerSeconds/60);
 
-  const seconds =
-    state.timerSeconds % 60;
+const seconds=
+state.timerSeconds%60;
 
-  $("timer").textContent =
-    String(minutes).padStart(2,"0") +
-    ":" +
-    String(seconds).padStart(2,"0");
+$("timer").textContent=
+String(minutes).padStart(2,"0")+
+":"+
+String(seconds).padStart(2,"0");
 
-  if(state.timerSeconds <= 300){
-    $("timer").classList.add("danger");
-  }else{
-    $("timer").classList.remove("danger");
-  }
+if(state.timerSeconds<=300){
+
+$("timer").classList.add("danger");
+
+}
+
+else{
+
+$("timer").classList.remove("danger");
+
+}
+
 }
 
 
-/* -----------------------------
+/* =========================================================
    BACK
------------------------------ */
+========================================================= */
 
 $("backToPicker").addEventListener("click",()=>{
 
-  const leave =
-    confirm(
-      "Wenn Sie den Test verlassen, gehen Sie zurück zur Testauswahl. Fortfahren?"
-    );
+const leave=
+confirm(
+"Wenn Sie den Test verlassen, gehen Sie zurück zur Testauswahl. Fortfahren?"
+);
 
-  if(!leave) return;
+if(!leave)return;
 
-  clearInterval(timerInterval);
+stopSpeech();
 
-  hide("examPage");
-  show("pickerPage");
+clearInterval(timerInterval);
+
+hide("examPage");
+
+show("pickerPage");
+
 });
 
 
-/* -----------------------------
+/* =========================================================
    SUBMIT
------------------------------ */
+========================================================= */
 
-$("submitBtn").addEventListener("click",submitTest);
+$("submitBtn").addEventListener(
+"click",
+submitTest
+);
+
 
 function submitTest(){
 
-  if(state.submitted) return;
+if(state.submitted)return;
 
-  const confirmed =
-    confirm(
-      "Test abgeben?\n\nNach der Abgabe können die Antworten nicht mehr geändert werden."
-    );
+const confirmed=
+confirm(
+"Test abgeben?\n\nNach der Abgabe können die Antworten nicht mehr geändert werden."
+);
 
-  if(!confirmed) return;
+if(!confirmed)return;
 
-  state.submitted = true;
+state.submitted=true;
 
-  clearInterval(timerInterval);
+stopSpeech();
 
-  const result = calculateResult();
+clearInterval(timerInterval);
 
-  renderResult(result);
+const result=
+calculateResult();
 
-  hide("examPage");
-  show("resultPage");
+renderResult(result);
 
-  window.scrollTo({top:0});
+hide("examPage");
+
+show("resultPage");
+
+window.scrollTo({
+top:0
+});
+
 }
 
 
-/* -----------------------------
+/* =========================================================
    SCORING
------------------------------ */
+========================================================= */
 
 function calculateResult(){
 
-  const test = TESTS[state.testId];
+const test=TESTS[state.testId];
 
-  let hoeren = 0;
-  let lesen = 0;
-  let schreiben = 0;
+let hoeren=0;
+let lesen=0;
+let schreiben=0;
 
-  const review = [];
-
-  if(test.hoeren){
-
-    test.hoeren.forEach((item,index)=>{
-
-      const key = "hoeren_" + index;
-      const selected = state.answers[key];
-
-      const correct =
-        selected === item.answer;
-
-      if(correct) hoeren++;
-
-      review.push({
-        section:"Hören",
-        number:index + 1,
-        question:item.q,
-        correct,
-        selected:
-          selected === undefined
-            ? "Nicht beantwortet"
-            : item.options[selected],
-        answer:item.options[item.answer]
-      });
-
-    });
-  }
+const review=[];
 
 
-  if(test.lesen){
+if(test.hoeren){
 
-    test.lesen.forEach((item,index)=>{
+test.hoeren.forEach((item,index)=>{
 
-      const key = "lesen_" + index;
-      const selected = state.answers[key];
+const key="hoeren_"+index;
 
-      const correct =
-        selected === item.answer;
+const selected=
+state.answers[key];
 
-      if(correct) lesen++;
+const correct=
+selected===item.answer;
 
-      review.push({
-        section:"Lesen",
-        number:index + 1,
-        question:item.q,
-        correct,
-        selected:
-          selected === undefined
-            ? "Nicht beantwortet"
-            : item.options[selected],
-        answer:item.options[item.answer]
-      });
+if(correct)hoeren++;
 
-    });
-  }
+review.push({
 
+section:"Hören",
 
-  /*
-    Schreiben:
-    Part 1 = 5 points using normalized text matching.
-    Part 2 = practice heuristic up to 10 points.
-    This is deliberately NOT presented as official AI/TELC scoring.
-  */
+number:index+1,
 
-  if(test.schreiben){
+question:item.q,
 
-    test.schreiben.forEach(item=>{
+correct,
 
-      if(item.type === "form"){
+selected:
+selected===undefined
+?"Nicht beantwortet"
+:item.options[selected],
 
-        item.fields.forEach(field=>{
+answer:item.options[item.answer]
 
-          const user =
-            normalize(state.writing[field.id] || "");
+});
 
-          const answer =
-            normalize(field.answer);
+});
 
-          if(matchesAnswer(user,answer)){
-            schreiben++;
-          }
-
-        });
-
-      }else{
-
-        const text =
-          state.writing[item.id] || "";
-
-        schreiben += scoreWritingText(text);
-
-      }
-
-    });
-
-  }
-
-
-  return {
-    hoeren,
-    lesen,
-    schreiben,
-    total:hoeren + lesen + schreiben,
-    max:
-      (test.hoeren ? test.hoeren.length : 0) +
-      (test.lesen ? test.lesen.length : 0) +
-      (test.schreiben
-        ? test.schreiben.reduce((sum,item)=>{
-            return sum + (
-              item.type === "form"
-                ? item.fields.length
-                : 10
-            );
-          },0)
-        : 0),
-    review
-  };
 }
 
 
-/* -----------------------------
-   WRITING MATCH
------------------------------ */
+if(test.lesen){
+
+test.lesen.forEach((item,index)=>{
+
+const key="lesen_"+index;
+
+const selected=
+state.answers[key];
+
+const correct=
+selected===item.answer;
+
+if(correct)lesen++;
+
+review.push({
+
+section:"Lesen",
+
+number:index+1,
+
+question:item.q,
+
+correct,
+
+selected:
+selected===undefined
+?"Nicht beantwortet"
+:item.options[selected],
+
+answer:item.options[item.answer]
+
+});
+
+});
+
+}
+
+
+if(test.schreiben){
+
+test.schreiben.forEach(item=>{
+
+if(item.type==="form"){
+
+item.fields.forEach(field=>{
+
+const user=
+normalize(
+state.writing[field.id]||""
+);
+
+const answer=
+normalize(field.answer);
+
+if(matchesAnswer(user,answer)){
+
+schreiben++;
+
+}
+
+});
+
+}
+
+else{
+
+schreiben+=
+scoreWritingText(
+state.writing[item.id]||""
+);
+
+}
+
+});
+
+}
+
+
+return{
+
+hoeren,
+
+lesen,
+
+schreiben,
+
+total:
+hoeren+
+lesen+
+schreiben,
+
+max:
+(test.hoeren?test.hoeren.length:0)+
+(test.lesen?test.lesen.length:0)+
+(test.schreiben
+?test.schreiben.reduce(
+(sum,item)=>
+sum+
+(
+item.type==="form"
+?item.fields.length
+:10
+),
+0
+)
+:0),
+
+review
+
+};
+
+}
+
+
+/* =========================================================
+   NORMALIZE
+========================================================= */
 
 function normalize(value){
 
-  return String(value)
-    .toLowerCase()
-    .replace(/ä/g,"a")
-    .replace(/ö/g,"o")
-    .replace(/ü/g,"u")
-    .replace(/ß/g,"ss")
-    .replace(/[.,;:!?()]/g," ")
-    .replace(/\s+/g," ")
-    .trim();
+return String(value)
+.toLowerCase()
+.replace(/ä/g,"a")
+.replace(/ö/g,"o")
+.replace(/ü/g,"u")
+.replace(/ß/g,"ss")
+.replace(/[.,;:!?()]/g," ")
+.replace(/\s+/g," ")
+.trim();
+
 }
 
 
 function matchesAnswer(user,answer){
 
-  if(!user) return false;
+if(!user)return false;
 
-  if(user === answer) return true;
+if(user===answer)return true;
 
-  const userWords = user.split(" ");
-  const answerWords = answer.split(" ");
+const userWords=
+user.split(" ");
 
-  const found =
-    answerWords.filter(word =>
-      userWords.includes(word)
-    ).length;
+const answerWords=
+answer.split(" ");
 
-  return found >= Math.max(
-    1,
-    Math.ceil(answerWords.length * .65)
-  );
+const found=
+answerWords.filter(word=>
+userWords.includes(word)
+).length;
+
+return found>=Math.max(
+1,
+Math.ceil(answerWords.length*.65)
+);
+
 }
 
 
-/* -----------------------------
-   WRITING PART 2 PRACTICE SCORE
------------------------------ */
+/* =========================================================
+   WRITING SCORE
+========================================================= */
 
 function scoreWritingText(text){
 
-  const words =
-    text.trim()
-      ? text.trim().split(/\s+/).length
-      : 0;
+const words=
+text.trim()
+?text.trim().split(/\s+/).length
+:0;
 
-  if(words === 0) return 0;
+if(words===0)return 0;
 
-  let score = 0;
+let score=0;
 
-  if(words >= 25) score += 3;
-  else if(words >= 15) score += 2;
-  else score += 1;
+if(words>=25)score+=3;
+else if(words>=15)score+=2;
+else score+=1;
 
-  if(/[.!?]/.test(text)) score += 2;
+if(/[.!?]/.test(text))
+score+=2;
 
-  if(
-    /\b(ich|wir|du|sie|mein|meine|heute|morgen|abend|krank|kino)\b/i.test(text)
-  ){
-    score += 2;
-  }
+if(
+/\b(ich|wir|du|sie|mein|meine|heute|morgen|abend|krank|kino)\b/i
+.test(text)
+){
 
-  if(
-    /\b(hallo|liebe|lieber|sehr geehrte)\b/i.test(text)
-  ){
-    score += 1;
-  }
+score+=2;
 
-  if(
-    /\b(grüße|grüßen|freundliche|tschüss|liebe grüße)\b/i.test(text)
-  ){
-    score += 1;
-  }
+}
 
-  if(
-    words >= 30
-  ){
-    score += 1;
-  }
+if(
+/\b(hallo|liebe|lieber|sehr geehrte)\b/i
+.test(text)
+){
 
-  return Math.min(10,score);
+score+=1;
+
+}
+
+if(
+/\b(grüße|grüßen|freundliche|tschüss|liebe grüße)\b/i
+.test(text)
+){
+
+score+=1;
+
+}
+
+if(words>=30)
+score+=1;
+
+return Math.min(10,score);
+
 }
 
 
-/* -----------------------------
+/* =========================================================
    RESULT
------------------------------ */
+========================================================= */
 
 function renderResult(result){
 
-  $("resultTitle").textContent =
-    `${TESTS[state.testId].title} — ${state.studentName}`;
+$("resultTitle").textContent=
+`${TESTS[state.testId].title} — ${state.studentName}`;
 
-  $("totalScore").textContent =
-    result.total;
+$("totalScore").textContent=
+result.total;
 
-  $("listenScore").textContent =
-    result.hoeren;
+$("listenScore").textContent=
+result.hoeren;
 
-  $("readScore").textContent =
-    result.lesen;
+$("readScore").textContent=
+result.lesen;
 
-  $("writeScore").textContent =
-    result.schreiben;
-
-
-  const percentage =
-    result.max
-      ? Math.round(result.total / result.max * 100)
-      : 0;
+$("writeScore").textContent=
+result.schreiben;
 
 
-  $("resultMessage").textContent =
-    percentage >= 60
-      ? "Test completed"
-      : "Keep practising";
+const percentage=
+result.max
+?Math.round(result.total/result.max*100)
+:0;
+
+$("resultMessage").textContent=
+percentage>=60
+?"Test completed"
+:"Keep practising";
 
 
-  const review = $("reviewBox");
+const review=$("reviewBox");
 
-  review.innerHTML = `
-    <div style="padding:20px;border-bottom:1px solid #292929">
-      <h3>Answer Review</h3>
-      <p style="color:#888;margin-top:6px">
-        Objective answers are evaluated automatically.
-        Writing Part 2 uses a practice heuristic and is not an official TELC/Goethe AI evaluation.
-      </p>
-    </div>
-  `;
+review.innerHTML=`
+
+<div style="padding:20px;border-bottom:1px solid #292929">
+
+<h3>
+Answer Review
+</h3>
+
+<p style="color:#888;margin-top:6px">
+
+Objective answers are evaluated automatically.
+Writing Part 2 uses a practice heuristic and is not an official TELC/Goethe AI evaluation.
+
+</p>
+
+</div>
+
+`;
 
 
-  result.review.forEach(item=>{
+result.review.forEach(item=>{
 
-    const row = document.createElement("div");
+const row=
+document.createElement("div");
 
-    row.className = "reviewRow";
+row.className="reviewRow";
 
-    row.innerHTML = `
-      <strong>
-        ${escapeHTML(item.section)}
-        ${item.number}
-      </strong>
+row.innerHTML=`
 
-      <div style="margin-top:7px">
-        ${escapeHTML(item.question)}
-      </div>
+<strong>
+${escapeHTML(item.section)}
+${item.number}
+</strong>
 
-      <div style="margin-top:8px"
-           class="${item.correct ? "correct" : "wrong"}">
+<div style="margin-top:7px">
+${escapeHTML(item.question)}
+</div>
 
-        ${item.correct ? "✓ Correct" : "✕ Incorrect"}
+<div
+style="margin-top:8px"
+class="${item.correct?"correct":"wrong"}">
 
-      </div>
+${item.correct?"✓ Correct":"✕ Incorrect"}
 
-      <div style="color:#888;margin-top:5px">
-        Your answer:
-        ${escapeHTML(item.selected)}
-      </div>
+</div>
 
-      <div style="color:var(--gold);margin-top:3px">
-        Correct answer:
-        ${escapeHTML(item.answer)}
-      </div>
-    `;
+<div style="color:#888;margin-top:5px">
 
-    review.appendChild(row);
-  });
+Your answer:
+${escapeHTML(item.selected)}
+
+</div>
+
+<div style="color:var(--gold);margin-top:3px">
+
+Correct answer:
+${escapeHTML(item.answer)}
+
+</div>
+
+`;
+
+review.appendChild(row);
+
+});
 
 }
 
 
-/* -----------------------------
-   PRINT / PDF
------------------------------ */
+/* =========================================================
+   PRINT
+========================================================= */
 
-$("printBtn").addEventListener("click",()=>{
+$("printBtn").addEventListener(
+"click",
+()=>window.print()
+);
 
-  window.print();
 
-});
-
-
-/* -----------------------------
+/* =========================================================
    NEW TEST
------------------------------ */
+========================================================= */
 
 $("newTestBtn").addEventListener("click",()=>{
 
-  clearInterval(timerInterval);
+stopSpeech();
 
-  state.testId = null;
-  state.answers = {};
-  state.writing = {};
-  state.submitted = false;
+clearInterval(timerInterval);
 
-  hide("resultPage");
-  show("pickerPage");
+state.testId=null;
+state.answers={};
+state.writing={};
+state.submitted=false;
 
-  renderTestCards();
+hide("resultPage");
 
-  window.scrollTo({top:0});
+show("pickerPage");
+
+renderTestCards();
+
+window.scrollTo({
+top:0
+});
+
 });
 
 
-/* -----------------------------
-   ESCAPE HTML
------------------------------ */
+/* =========================================================
+   ESCAPE
+========================================================= */
 
 function escapeHTML(value){
 
-  return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
 }
 
 
-/* -----------------------------
-   TAB/VISIBILITY PROTECTION
------------------------------ */
+/* =========================================================
+   TAB / VISIBILITY
+========================================================= */
 
-let warningShown = false;
+let warningShown=false;
 
-document.addEventListener("visibilitychange",()=>{
+document.addEventListener(
+"visibilitychange",
+()=>{
 
-  if(
-    document.hidden &&
-    !state.submitted &&
-    state.testId !== null
-  ){
+if(
+document.hidden &&
+!state.submitted &&
+state.testId!==null
+){
 
-    if(!warningShown){
+stopSpeech();
 
-      warningShown = true;
+if(!warningShown){
 
-      setTimeout(()=>{
-        warningShown = false;
-      },5000);
+warningShown=true;
 
-      alert(
-        "Warning: You left the examination window. Please return to the test."
-      );
-    }
+setTimeout(()=>{
+warningShown=false;
+},5000);
 
-  }
+alert(
+"Warning: You left the examination window. Please return to the test."
+);
 
-});
+}
 
+}
 
-/* -----------------------------
-   DISABLE RIGHT CLICK
------------------------------ */
-
-document.addEventListener("contextmenu",e=>{
-  if(state.testId !== null && !state.submitted){
-    e.preventDefault();
-  }
-});
+}
+);
 
 
-/* -----------------------------
+/* =========================================================
+   RIGHT CLICK
+========================================================= */
+
+document.addEventListener(
+"contextmenu",
+e=>{
+
+if(
+state.testId!==null &&
+!state.submitted
+){
+
+e.preventDefault();
+
+}
+
+}
+);
+
+
+/* =========================================================
+   LOAD GERMAN VOICES
+========================================================= */
+
+if("speechSynthesis" in window){
+
+window.speechSynthesis.onvoiceschanged=()=>{
+window.speechSynthesis.getVoices();
+};
+
+}
+
+
+/* =========================================================
    INITIALIZATION
------------------------------ */
+========================================================= */
 
 renderTestCards();
 
